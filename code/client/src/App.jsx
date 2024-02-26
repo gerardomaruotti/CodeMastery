@@ -11,7 +11,6 @@ import ResultsPage from './pages/ResultsPage';
 import ProposePage from './pages/ProposePage';
 import DocumentationPage from './pages/DocumentationPage';
 import MyExercisesPage from './pages/MyExercisesPage';
-import Layout from './components/Layout';
 
 function App() {
 	const [isLoading, setIsLoading] = useState(true);
@@ -37,19 +36,17 @@ function App() {
 			) : (
 				<BrowserRouter>
 					<UserContext.Provider value={{ user, setUser }}>
-						<Layout>
-							<Routes>
-								<Route path='*' element={<NotFound />} />
-								<Route path='/' element={<TopicsList />} />
-								<Route path='/topics/:topic' element={<ExercisesList />} />
-								<Route path='/coding-page/:topic/:exercise' element={<CodingPage />} />
-								<Route path='/results-page/:topic/:exercise' element={<ResultsPage />} />
-								<Route path='/my-exercises' element={<MyExercisesPage />} />
-								<Route path='/propose-page' element={<ProposePage />} />
-								<Route path='/propose-page/:topic/:exercise/edit' element={<ProposePage />} />
-								<Route path='/documentation-page' element={<DocumentationPage />} />
-							</Routes>
-						</Layout>
+						<Routes>
+							<Route path='*' element={<NotFound />} />
+							<Route path='/' element={<TopicsList />} />
+							<Route path='/topics/:topic' element={<ExercisesList />} />
+							<Route path='/coding-page/:topic/:exercise' element={<CodingPage />} />
+							<Route path='/results-page/:topic/:exercise' element={<ResultsPage />} />
+							<Route path='/my-exercises' element={<MyExercisesPage />} />
+							<Route path='/propose-page' element={<ProposePage />} />
+							<Route path='/propose-page/:topic/:exercise/edit' element={<ProposePage />} />
+							<Route path='/documentation-page' element={<DocumentationPage />} />
+						</Routes>
 					</UserContext.Provider>
 				</BrowserRouter>
 			)}

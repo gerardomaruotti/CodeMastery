@@ -56,27 +56,25 @@ function DocumentationPage() {
 		return (
 			<div>
 				<div className='flex items-center justify-center space-x-40 mb-5'>
-					<button className='zoom-button py-2 px-4' onMouseEnter={() => setIsHovered(1)} onMouseLeave={() => setIsHovered(0)}>
-						1<div className='cursor-default line line-right' onMouseEnter={() => setIsHovered(0)}></div>
+					<button className='zoom-button py-2 px-4'>
+						1<div className='cursor-default line line-right'></div>
 					</button>
 
-					<button className='zoom-button py-2 px-4' onMouseEnter={() => setIsHovered(2)} onMouseLeave={() => setIsHovered(0)}>
-						2<div className='cursor-default line2 line-right' onMouseEnter={() => setIsHovered(0)}></div>
+					<button className='zoom-button py-2 px-4'>
+						2<div className='cursor-default line2 line-right'></div>
 					</button>
 
-					<button className='zoom-button py-2 px-4' onMouseEnter={() => setIsHovered(3)} onMouseLeave={() => setIsHovered(0)}>
-						3<div className='cursor-default line3 line-right' onMouseEnter={() => setIsHovered(0)}></div>
+					<button className='zoom-button py-2 px-4'>
+						3<div className='cursor-default line3 line-right'></div>
 					</button>
 
-					<button className='zoom-button py-2 px-4' onMouseEnter={() => setIsHovered(4)} onMouseLeave={() => setIsHovered(0)}>
-						4
-					</button>
+					<button className='zoom-button py-2 px-4'>4</button>
 				</div>
 
 				<div>
 					<Row>
-						<Col onMouseEnter={() => setIsHovered(1)} onMouseLeave={() => setIsHovered(0)}>
-							<div className={`rounded-2xl overflow-scroll bg-accent mx-2 my-2 ${isHovered === 1 ? 'hovered' : ''}`}>
+						<Col>
+							<div className={`rounded-2xl overflow-scroll bg-accent mx-2 my-2`}>
 								<div className='px-6 py-3' style={{ width: '15dvw', height: '30dvh' }}>
 									<div className='flex items-center justify-content-center'>
 										<div className='text-[#FFFFFF] font-bold text-xl text-center'>1. Topic</div>
@@ -90,7 +88,7 @@ function DocumentationPage() {
 							</div>
 						</Col>
 						<Col onMouseEnter={() => setIsHovered(2)} onMouseLeave={() => setIsHovered(0)}>
-							<div className={`rounded-2xl overflow-scroll shadow-lg bg-accent mx-2 my-2 ${isHovered === 2 ? 'hovered' : ''}`}>
+							<div className={`rounded-2xl overflow-scroll shadow-lg bg-accent mx-2 my-2`}>
 								<div className='px-6 py-3' style={{ width: '15dvw', height: '30dvh' }}>
 									<div className='flex items-center justify-content-center'>
 										<div className='text-[#FFFFFF] font-bold text-xl text-center'>2. Exercise</div>
@@ -104,7 +102,7 @@ function DocumentationPage() {
 							</div>
 						</Col>
 						<Col onMouseEnter={() => setIsHovered(3)} onMouseLeave={() => setIsHovered(0)}>
-							<div className={`rounded-2xl overflow-scroll shadow-lg bg-accent mx-2 my-2 ${isHovered === 3 ? 'hovered' : ''}`}>
+							<div className={`rounded-2xl overflow-scroll shadow-lg bg-accent mx-2 my-2`}>
 								<div className='px-6 py-3' style={{ width: '15dvw', height: '30dvh' }}>
 									<div className='flex items-center justify-content-center'>
 										<div className='text-[#FFFFFF] font-bold text-xl text-center'>3. Evaluation</div>
@@ -118,13 +116,13 @@ function DocumentationPage() {
 							</div>
 						</Col>
 						<Col onMouseEnter={() => setIsHovered(4)} onMouseLeave={() => setIsHovered(0)}>
-							<div className={`rounded-2xl overflow-scroll shadow-lg bg-accent mx-2 my-2 ${isHovered === 4 ? 'hovered' : ''}`}>
+							<div className={`rounded-2xl overflow-scroll shadow-lg bg-accent mx-2 my-2`}>
 								<div className='px-6 py-3' style={{ width: '15dvw', height: '30dvh' }}>
 									<div className='flex items-center justify-content-center'>
 										<div className='text-[#FFFFFF] font-bold text-xl text-center'>4. Proposes</div>
 									</div>
 									<p className='text-secondary text-base'>
-										Upon <span className='text-[#000000]'>successfully</span> completing all exercises within a topic, users can propose new exercises
+										Upon <span className='font-bold'>successfully</span> completing all exercises within a topic, users can propose new exercises
 										related to that topic for evaluation (Acceptance, Pending or Rejection). This step ensures a comprehensive understanding of the
 										topic and encourages user engagement in the learning process.
 									</p>
@@ -148,8 +146,8 @@ function DocumentationPage() {
 						In our application, we've implemented an engaging
 						<span className='text-accentThird font-bold'> gamification </span>
 						system to inspire users toward continuous improvement. This innovative system introduces{' '}
-						<span className='text-accent font-bold'>Medals</span> that reflect the number of completed exercises in comparison to the total exercises
-						within a specific topic.
+						<span className='text-accentThird font-bold'>Medals</span> that reflect the number of completed exercises in comparison to the total
+						exercises within a specific topic.
 						<br></br>
 						<br></br>
 						The counting adheres to the following guidelines:
@@ -195,7 +193,7 @@ function DocumentationPage() {
 								<img src={MedalPlaceholder} alt='MedalPlaceholder' style={{ width: '70px', height: '70px' }} />
 							</div>
 							<div className='text-center'>
-								<p className='text-accentSecondary font-bold text-xl text-center'>No Medal</p>
+								<p className='text-accentSecondary mt-2 font-bold text-xl text-center'>No Medal</p>
 							</div>
 						</Col>
 
@@ -204,7 +202,7 @@ function DocumentationPage() {
 								<img src={Bronze} alt='Bronze' style={{ width: '70px', height: '70px' }} />
 							</div>
 							<div className='text-center'>
-								<p className='text-accentSecondary font-bold text-xl text-center'>Bronze</p>
+								<p className='text-accentSecondary mt-2 font-bold text-xl text-center'>Bronze</p>
 							</div>
 						</Col>
 
@@ -213,7 +211,7 @@ function DocumentationPage() {
 								<img src={Silver} alt='Silver' style={{ width: '70px', height: '70px' }} />
 							</div>
 							<div className='text-center'>
-								<p className='text-accentSecondary font-bold text-xl text-center'>Silver</p>
+								<p className='text-accentSecondary mt-2 font-bold text-xl text-center'>Silver</p>
 							</div>
 						</Col>
 
@@ -222,7 +220,7 @@ function DocumentationPage() {
 								<img src={Gold} alt='Gold' style={{ width: '70px', height: '70px' }} />
 							</div>
 							<div className='text-center'>
-								<p className='text-accentSecondary font-bold text-xl text-center'>Gold</p>
+								<p className='text-accentSecondary mt-2 font-bold text-xl text-center'>Gold</p>
 							</div>
 						</Col>
 
@@ -231,7 +229,7 @@ function DocumentationPage() {
 								<img src={Trophy} alt='Trophy' style={{ width: '70px', height: '70px' }} />
 							</div>
 							<div className='text-center'>
-								<p className='text-accentSecondary font-bold text-xl text-center'>Trophy</p>
+								<p className='text-accentSecondary mt-2 font-bold text-xl text-center'>Trophy</p>
 							</div>
 						</Col>
 					</Row>
@@ -250,7 +248,7 @@ function DocumentationPage() {
 					<p>
 						Our application features a <span className='text-accentThird font-bold'>Difficulty System</span> to assist users in evaluating their
 						knowledge level within a specific topic. This system enables users to study a topic from the ground up, engaging in step-by-step exercises
-						of increasing difficulty. This tailored approach facilitates <span className='text-accent font-bold'>Comprehensive Learning</span>,
+						of increasing difficulty. This tailored approach facilitates <span className='text-accentThird font-bold'>Comprehensive Learning</span>,
 						allowing users to build a strong foundation and progressively advance their skills in the subject matter.
 						<br></br>
 						<br></br>
@@ -329,7 +327,10 @@ function DocumentationPage() {
 
 	const Card = ({ title, icon, description }) => {
 		return (
-			<div className='cursor-pointer rounded-3xl overflow-scroll shadow-lg bg-accent mx-2 my-2 hover:scale-105' onClick={() => handleCardClick(title)}>
+			<div
+				className='cursor-pointer rounded-3xl overflow-scroll shadow-sm border border-accent bg-accent mx-2 my-2 transition duration-150 active:border-secondary hover:shadow-lg hover:shadow-sidebar hover:-translate-y-0.5'
+				onClick={() => handleCardClick(title)}
+			>
 				<div className='px-6 py-4' style={{ width: '20vw', height: '25vh' }}>
 					<div className='flex items-center justify-content-center'>
 						<span className='text-2xl mr-2'>
@@ -348,22 +349,19 @@ function DocumentationPage() {
 			<div style={{ marginLeft: '250px' }}>
 				<Sidebar />
 				<div className='flex flex-col mx-auto'>
-					<Row className='d-flex text-center justify-content-center align-items-center'>
-						<h1 className='text-3xl font-bold'>Documentation</h1>
-					</Row>
-
+					<h1 className='text-3xl text-center font-bold'>Help Center</h1>
 					<Row>
-						<p className='text-center font-bold mb-3'>Everything you need to get in touch with our application!</p>
 						<div className='flex justify-content-center items-center text-secondary w-full'>
-							<div className='w-1/2 relative mb-4 mt-2'>
+							<div className='w-1/2 relative mb-2 mt-4'>
 								<input
 									type='search'
 									name='search'
-									placeholder='Search the docs...'
+									placeholder='Search'
 									className='bg-sidebar border border-sidebar placeholder-secondaryText shadow px-4 py-3 w-full rounded-full text-sm focus:outline-none focus:border-accent'
 									value={searchText}
 									onChange={(e) => setSearchText(e.target.value)}
 								/>
+
 								{searchText ? (
 									<IoClose className='text-xl absolute right-5 top-1/2 transform -translate-y-1/2 cursor-pointer' onClick={clearSearch} />
 								) : (
@@ -372,7 +370,7 @@ function DocumentationPage() {
 							</div>
 						</div>
 					</Row>
-					<Row className='flex items-center justify-center mt-10'>
+					<Row className='flex items-center justify-center mt-6'>
 						<div className='flex flex-wrap justify-center gap-4'>
 							{filteredData.map((item, index) => (
 								<Card key={index} title={item.title} icon={item.icon} description={item.description} />

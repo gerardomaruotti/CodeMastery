@@ -44,7 +44,7 @@ function ProposePage() {
 	const [message, setMessage] = useState('Proposal Sent!');
 	const [resultStatus, setResultStatus] = useState('Success');
 	const [proposeClick, setProposeClick] = useState(false);
-	const [isOpen, setIsOpen] = useState(false);
+	const [isOpen, setIsOpen] = useState(true);
 
 	const handleToggle = () => {
 		setIsOpen(!isOpen);
@@ -579,7 +579,7 @@ function ProposePage() {
 				<Col md={showDetails ? 8 : 12} style={!showDetails ? { width: '97%' } : null}>
 					<div style={{ position: 'relative' }}>
 						<div
-							className='bg-sidebar relative h-screen overflow-scroll rounded-[20px]'
+							className='bg-sidebar relative h-[80vh] overflow-scroll rounded-[20px]'
 							style={{
 								zIndex: 999,
 								border: solutionError ? '1px solid red' : 'none',
@@ -587,9 +587,7 @@ function ProposePage() {
 						>
 							<div className='m-[10px] p-2'>
 								<div className='mb-3 flex align-middle'>
-									<div className="text-secondaryText flex whitespace-nowrap text-[17px] font-bold leading-[normal] tracking-[0] [font-family:'Lato-Bold',Helvetica]">
-										Your Code
-									</div>
+									<div className='text-secondaryText flex whitespace-nowrap text-[17px] font-bold'>Your Code</div>
 									<Button
 										className='bg-primary h-[50] w-[50] absolute top-1 right-3 rounded-full p-3 border border-primary hover:border-accent hover:-translate-y-0.5 shadow transform active:bg-accent transition duration-150 flex items-center justify-center'
 										onClick={() => handleFileUpload()}
@@ -597,7 +595,7 @@ function ProposePage() {
 										<MdOutlineFileUpload />
 									</Button>
 								</div>
-								<Form.Group className='mt-2 h-[100%] font-mono'>
+								<Form.Group className='mt-2 font-mono'>
 									<Form.Control
 										required
 										as='textarea'
@@ -605,7 +603,7 @@ function ProposePage() {
 										onKeyDown={handleCodeTab}
 										value={solution}
 										onChange={(e) => setSolution(e.target.value)}
-										className='bg-sidebar h-[100%] w-[100%] resize-none border-[none] text-white outline-none'
+										className='bg-sidebar w-[100%] resize-none border-[none] text-white outline-none'
 										placeholder='Write your code here'
 									/>
 								</Form.Group>

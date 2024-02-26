@@ -78,43 +78,19 @@ function CodingPage() {
 		});
 	};
 
-	const SaveCode = () => {
-		Swal.fire({
-			title: 'Do you want to save the changes?',
-			icon: 'question',
-			showCancelButton: true,
-			confirmButtonText: 'Save',
-			reverseButtons: true,
-		}).then(async (result) => {
-			if (result.isConfirmed) {
-				try {
-					const response = await ExercisesAPI.saveExercise(selectedTopic.Title, selectedExercise.Title, code);
-					const message = await response.json();
-
-					response.status === 200 ? setResultStatus('Success') : setResultStatus('Error');
-
-					setMessage(message.error || message.message);
-				} catch (error) {
-					setResultStatus('Error');
-					setMessage('An error occurred while saving the exercise.');
-				} finally {
-					setShowBanner(true);
-					setTimeout(() => {
-						setShowBanner(false);
-					}, 1000);
-				}
-			} else if (result.isDenied) {
-				Swal.fire('Changes are not saved', '', 'info');
-			}
-		});
-	};
-
 	const RunCode = () => {
 		setIsChecking(true);
 
 		setTimeout(() => {
-			if (initialCode === code) setWorkingStatus("Doesn't Work!");
-			else setWorkingStatus(Math.random() < 0.5 ? 'Works!' : "Doesn't Work!");
+			let workingStatusDef = '';
+			let sol = selectedExercise.Solution.replace(/\/\/.*$/gm, '').replace(/\n/g, '');
+			let c = code.replace(/\/\/.*$/gm, '').replace(/\n/g, '');
+
+			if (initialCode === code) workingStatusDef = "Doesn't Work!";
+			else if (c === sol) workingStatusDef = 'Works!';
+			else workingStatusDef = workingStatus === '' ? (Math.random() < 0.5 ? 'Works!' : "Doesn't Work!") : workingStatus;
+
+			setWorkingStatus(workingStatusDef);
 			setIsChecking(false);
 		}, 2000);
 	};
@@ -131,18 +107,9 @@ function CodingPage() {
 			if (result.isConfirmed) {
 				try {
 					const response = await ExercisesAPI.saveExercise(selectedTopic.Title, selectedExercise.Title, code);
-					const message = await response.json();
-
-					response.status === 200 ? setResultStatus('Success') : setResultStatus('Error');
-
-					setMessage(message.error || message.message);
 
 					if (response.status === 200) {
-						setShowBanner(true);
-						setTimeout(() => {
-							setShowBanner(false);
-							navigate(`/topics/${selectedTopic.Title}`);
-						}, 1000);
+						navigate(`/topics/${selectedTopic.Title}`);
 					} else {
 						Swal.fire({
 							title: 'Error',
@@ -196,9 +163,9 @@ function CodingPage() {
 	return (
 		<Container className='p-4 text-secondary bg-primary' fluid>
 			{showBanner && <Banner message={message} status={resultStatus} />}
-			<Row className='relative'>
+			<Row>
 				<Button
-					className='bg-sidebar w-[50px] border border-sidebar hover:border-accent hover:-translate-y-0.5 p-3 shadow rounded-full transform active:bg-accent transition duration-150'
+					className='bg-sidebar w-[50px] h-[50px] border border-sidebar hover:border-accent hover:-translate-y-0.5 p-3 shadow rounded-full transform active:bg-accent transition duration-150'
 					onClick={handleBackButton}
 				>
 					<IoChevronBack />
@@ -216,13 +183,13 @@ function CodingPage() {
 							<OverlayTrigger
 								placement='bottom'
 								overlay={
-									<Tooltip className='text-accentSecondary' style={{ fontSize: '10px' }}>
+									<Tooltip className='text-secondary' style={{ fontSize: '10px' }}>
 										Run Code
 									</Tooltip>
 								}
 							>
 								<Button
-									className='bg-sidebar w-[50px] border border-sidebar hover:border-accent hover:-translate-y-0.5 p-3 shadow rounded-full transform active:bg-accent transition duration-150'
+									className='bg-accent w-[50px] border border-accent hover:border-secondary hover:-translate-y-0.5 p-3 shadow rounded-full transform active:bg-white active:text-sidebar transition duration-150'
 									onClick={RunCode}
 								>
 									<IoPlay />
@@ -234,7 +201,6 @@ function CodingPage() {
 				</Col>
 
 				<Col className='d-flex justify-content-end'>
-					<GeneralButton text={'Save'} action={SaveCode} />
 					<GeneralButton text={'Submit'} action={SubmitCode} />
 				</Col>
 			</Row>
@@ -294,16 +260,14 @@ function CodingPage() {
 
 				<Col md={showDetails ? 8 : 12} style={!showDetails ? { width: '97%' } : null}>
 					<div style={{ position: 'relative' }}>
-						<div className='relative h-screen bg-sidebar rounded-[20px] overflow-scroll' style={{ zIndex: 999 }}>
+						<div className='relative bg-sidebar h-[80vh] rounded-[20px] overflow-scroll' style={{ zIndex: 999 }}>
 							<div className='m-[10px] p-2'>
-								<div className="[font-family:'Lato-Bold',Helvetica] font-bold text-lg tracking-[0] leading-[normal] whitespace-nowrap flex text-secondaryText">
-									Your Code
-								</div>
-								<Form.Group className='h-[100%] mt-2'>
+								<div className='font-bold text-lg tracking-[0] leading-[normal] whitespace-nowrap flex text-secondaryText'>Your Code</div>
+								<Form.Group className='mt-2 h-[80vh]'>
 									<Form.Control
 										as='textarea'
 										rows={40}
-										className='w-[100%] h-[100%] bg-sidebar border-[none] text-secondary font-mono outline-none resize-none'
+										className='w-[100%] bg-sidebar border-[none] text-secondary font-mono outline-none resize-none'
 										defaultValue={code}
 										value={code}
 										autoFocus

@@ -23,7 +23,7 @@ function Sidebar() {
 				<ul className='space-y-2 font-medium'>
 					<SidebarElement text='Topics' icon={<IoCompass />} path='/' isItemActive={isItemActive} />
 					<SidebarElement text='My Exercises' icon={<IoBook />} path='/my-exercises' isItemActive={isItemActive} />
-					<SidebarElement text='Documentation' icon={<IoHelpCircle />} path='/documentation-page' isItemActive={isItemActive} />
+					<SidebarElement text='Help' icon={<IoHelpCircle />} path='/documentation-page' isItemActive={isItemActive} />
 				</ul>
 				<div className='fixed bottom-6 pl-1'>
 					<div className='flex text-secondary '>
