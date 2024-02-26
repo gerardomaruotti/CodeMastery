@@ -1,0 +1,92 @@
+{
+	"TopicsList": [
+		{
+			"Title": "Introduction to Programming",
+			"Description": "Basic concepts and fundamentals of programming, covering topics such as variables, data types, control structures, and functions.",
+			"Tot_Exercises": 5,
+			"Done_Exercises": 0,
+			"Complete": false,
+			"Medal": ""
+		},
+		{
+			"Title": "Data Structures",
+			"Description": "Study of basic data structures including arrays, linked lists, stacks, and queues. Understanding their implementation and usage in solving problems.",
+			"Tot_Exercises": 5,
+			"Done_Exercises": 3,
+			"Complete": false,
+			"Medal": "Silver"
+		},
+		{
+			"Title": "Algorithms",
+			"Description": "Understanding and implementing algorithms for problem-solving. Covering various algorithmic paradigms such as divide and conquer, dynamic programming, and greedy algorithms.",
+			"Tot_Exercises": 5,
+			"Done_Exercises": 0,
+			"Complete": false,
+			"Medal": ""
+		},
+		{
+			"Title": "Introduction to Scratch Programming",
+			"Description": "Introduction to programming using Scratch, a visual programming language that allows the user also to programming with coding. Building simple games and animations.",
+			"Tot_Exercises": 5,
+			"Done_Exercises": 5,
+			"Complete": true,
+			"Medal": "Trophy"
+		},
+		{
+			"Title": "Introduction to Python Programming",
+			"Description": "Introduction to programming with Python, a versatile and widely-used language. Explore fundamental programming concepts, emphasizing hands-on coding experiences to build a strong foundation.",
+			"Tot_Exercises": 5,
+			"Done_Exercises": 0,
+			"Complete": false,
+			"Medal": ""
+		},
+		{
+			"Title": "Introduction to Java Programming",
+			"Description": "Embark on your programming journey with Java, a powerful and versatile general-purpose language. Dive into fundamental programming concepts, engaging in practical exercises to lay a robust groundwork for your coding skills.",
+			"Tot_Exercises": 5,
+			"Done_Exercises": 4,
+			"Complete": false,
+			"Medal": "Gold"
+		},
+		{
+			"Title": "Introduction to JavaScript Programming",
+			"Description": "Explore the world of programming through JavaScript, a dynamic and widely-used language for web development. Delve into the essentials of programming, grasping foundational concepts with hands-on exercises to fortify your coding proficiency.",
+			"Tot_Exercises": 5,
+			"Done_Exercises": 4,
+			"Complete": false,
+			"Medal": "Gold"
+		},
+		{
+			"Title": "Web Development Basics",
+			"Description": "Introduction to web development technologies including HTML, CSS, and JavaScript. Building static web pages and understanding the basics of front-end development.",
+			"Tot_Exercises": 5,
+			"Done_Exercises": 1,
+			"Complete": false,
+			"Medal": "Bronze"
+		},
+		{
+			"Title": "Excel Macros and VBA",
+			"Description": "How to automate tasks and create custom functions in Excel using macros and Visual Basic for Applications (VBA) programming language.",
+			"Tot_Exercises": 5,
+			"Done_Exercises": 5,
+			"Complete": true,
+			"Medal": "Trophy"
+		},
+		{
+			"Title": "Database Design",
+			"Description": "Principles of designing and managing databases. Covering topics such as database normalization, indexing, and query optimization.",
+			"Tot_Exercises": 5,
+			"Done_Exercises": 3,
+			"Complete": false,
+			"Medal": "Silver"
+		},
+		{
+			"Title": "Software Testing Techniques",
+			"Description": "Methods for ensuring software quality and reliability. Understanding testing levels, types of testing, and test automation.",
+			"Tot_Exercises": 5,
+			"Done_Exercises": 5,
+			"Complete": true,
+			"Medal": "Trophy"
+		}
+	]
+}

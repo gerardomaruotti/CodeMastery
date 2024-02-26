@@ -1,0 +1,521 @@
+{
+	"ExercisesList": {
+		"Introduction to Programming": [
+			{
+				"Title": "Hello World",
+				"Description": "Write a program that prints 'Hello, World!' to the console.",
+				"Instruction": "Create a new program and use the 'console.log' statement to display the greeting.",
+				"Level": "Beginner",
+				"Status": "Incomplete",
+				"Code": "// Your code here\n",
+				"Solution": "// Solution code\nconsole.log('Hello, World!');"
+			},
+			{
+				"Title": "Variable Declaration",
+				"Description": "Declare a variable and assign it a value.",
+				"Instruction": "Create a variable named 'myVar' and assign it a numeric value.",
+				"Level": "Beginner",
+				"Status": "Incomplete",
+				"Code": "// Your code here\n",
+				"Solution": "// Solution code\nlet myVar = 42;"
+			},
+			{
+				"Title": "Simple Calculator",
+				"Description": "Write a program that performs basic arithmetic operations.",
+				"Instruction": "Create a program that takes two numbers and allows the user to add, subtract, multiply, or divide them.",
+				"Level": "Intermediate",
+				"Status": "Incomplete",
+				"Code": "// Your code here\n",
+				"Solution": "// Solution code\n// Simple calculator\n\n// Function to perform addition\nfunction add(num1, num2) {\n    return num1 + num2;\n}\n\n// Function to perform subtraction\nfunction subtract(num1, num2) {\n    return num1 - num2;\n}\n\n// Function to perform multiplication\nfunction multiply(num1, num2) {\n    return num1 * num2;\n}\n\n// Function to perform division\nfunction divide(num1, num2) {\n    return num1 / num2;\n}\n\n// Get user input\nconst num1 = parseFloat(prompt('Enter first number:'));\nconst num2 = parseFloat(prompt('Enter second number:'));\n\n// Display menu\nconsole.log('Select operation:');\nconsole.log('1. Add');\nconsole.log('2. Subtract');\nconsole.log('3. Multiply');\nconsole.log('4. Divide');\n\n// Get user choice\nconst choice = prompt('Enter choice (1/2/3/4):');\n\n// Perform operation based on user choice\nif (choice === '1') {\n    console.log(num1, '+', num2, '=', add(num1, num2));\n} else if (choice === '2') {\n    console.log(num1, '-', num2, '=', subtract(num1, num2));\n} else if (choice === '3') {\n    console.log(num1, '*', num2, '=', multiply(num1, num2));\n} else if (choice === '4') {\n    console.log(num1, '/', num2, '=', divide(num1, num2));\n} else {\n    console.log('Invalid choice');\n}"
+			},
+			{
+				"Title": "String Manipulation",
+				"Description": "Manipulate strings using built-in methods.",
+				"Instruction": "Create a program that takes a user input string and performs string manipulation (e.g., uppercase, lowercase, reverse).",
+				"Level": "Intermediate",
+				"Status": "In Progress",
+				"Code": "// Your code here\n// Function to perform string manipulations\nfunction manipulateString(inputString) {\n ",
+				"Solution": "// Function to perform string manipulations\nfunction manipulateString(inputString) {\n  // Uppercase manipulation\n  const uppercaseResult = inputString.toUpperCase();\n\n  // Lowercase manipulation\n  const lowercaseResult = inputString.toLowerCase();\n\n  // Reverse manipulation\n  const reverseResult = inputString.split('').reverse().join('');\n\n  // Return results\n  return {\n    uppercase: uppercaseResult,\n    lowercase: lowercaseResult,\n    reverse: reverseResult,\n  };\n}\n\n// Get user input (this could be done in a real-world application using prompt or an input module)\nconst userInput = prompt('Enter your string:');\n\n// Perform manipulations on the user-entered string\nconst manipulationResults = manipulateString(userInput);\n\n// Display results\nconsole.log('Uppercase:', manipulationResults.uppercase);\nconsole.log('Lowercase:', manipulationResults.lowercase);\nconsole.log('Reverse:', manipulationResults.reverse);"
+			},
+			{
+				"Title": "Conditional Statements",
+				"Description": "Use conditional statements to control program flow.",
+				"Instruction": "Write a program that checks if a number is positive, negative, or zero.",
+				"Level": "Advanced",
+				"Status": "In Progress",
+				"Code": "// Your code here\nlet num = 42;\nif (num > 0) {\n",
+				"Solution": "// Solution code\nlet num = 42;\nif (num > 0) {\n    console.log('Positive');\n} else if (num < 0) {\n    console.log('Negative');\n} else {\n    console.log('Zero');\n}"
+			}
+		],
+		"Data Structures": [
+			{
+				"Title": "Array Basics",
+				"Description": "Create and manipulate arrays.",
+				"Instruction": "Create an array named 'myArray' and add three elements to it.",
+				"Level": "Beginner",
+				"Status": "Incomplete",
+				"Code": "// Your code here\n",
+				"Solution": "// Solution code\nlet myArray = [1, 2, 3];"
+			},
+			{
+				"Title": "Searching Algorithms",
+				"Description": "Implement linear and binary search algorithms.",
+				"Instruction": "Write functions to perform linear and binary search on an array.",
+				"Level": "Beginner",
+				"Status": "Failed",
+				"Code": "// Your code here\nnfunction linearSearch(array, element) {\n    // Loop through the array\n    for (let i = 0; i < array.length + 1; i++) {\n        // Check if the current element is equal to the search element\n        if (array[i] === element) {\n            // Return the index of the element\n            return i;\n        }\n    }\n\n    // Return -1 if the element is not found\n    return -1;\n}\n\n// Function to perform binary search\nfunction binarySearch(array, element) {\n    // Define start and end indices\n    let start = 0;\n    let end = array.length - 1;\n\n    // Loop until start index is less than or equal to end index\n    while (start <= end) {\n        // Calculate the middle index\n        let mid = Math.floor((start + end) / 2);\n\n        // Check if the middle element is equal to the search element\n        if (array[mid] === element) {\n            // Return the index of the element\n            return mid;\n        } else if (array[mid] < element) {\n            // Update start index\n            start = mid + 1;\n        } else {\n            // Update end index\n            end = mid - 1;\n        }\n    }\n\n    // Return -1 if the element is not found\n    return -1;\n}\n\n// Create an array\nconst array = [1, 2, 3, 4, 5];\n\n// Perform linear search\nconsole.log(linearSearch(array, 3));\n\n// Perform binary search\nconsole.log(binarySearch(array, 3));",
+				"Solution": "// Solution code\n// Searching algorithms\n\n// Function to perform linear search\nfunction linearSearch(array, element) {\n    // Loop through the array\n    for (let i = 0; i < array.length; i++) {\n        // Check if the current element is equal to the search element\n        if (array[i] === element) {\n            // Return the index of the element\n            return i;\n        }\n    }\n\n    // Return -1 if the element is not found\n    return -1;\n}\n\n// Function to perform binary search\nfunction binarySearch(array, element) {\n    // Define start and end indices\n    let start = 0;\n    let end = array.length - 1;\n\n    // Loop until start index is less than or equal to end index\n    while (start <= end) {\n        // Calculate the middle index\n        let mid = Math.floor((start + end) / 2);\n\n        // Check if the middle element is equal to the search element\n        if (array[mid] === element) {\n            // Return the index of the element\n            return mid;\n        } else if (array[mid] < element) {\n            // Update start index\n            start = mid + 1;\n        } else {\n            // Update end index\n            end = mid - 1;\n        }\n    }\n\n    // Return -1 if the element is not found\n    return -1;\n}\n\n// Create an array\nconst array = [1, 2, 3, 4, 5];\n\n// Perform linear search\nconsole.log(linearSearch(array, 3));\n\n// Perform binary search\nconsole.log(binarySearch(array, 3));"
+			},
+			{
+				"Title": "Stack Implementation",
+				"Description": "Implement a stack data structure.",
+				"Instruction": "Create a stack and implement basic operations like push and pop.",
+				"Level": "Intermediate",
+				"Status": "Complete",
+				"Code": "// Solution code\n// Stack implementation...\n\n// Define a class named 'Stack'\nclass Stack {\n    // Define a constructor to initialize the stack\n    constructor() {\n        this.items = [];\n    }\n\n    // Define a method to push an element to the stack\n    push(element) {\n        this.items.push(element);\n    }\n\n    // Define a method to pop an element from the stack\n    pop() {\n        if (this.items.length === 0) {\n            return 'Underflow';\n        }\n        return this.items.pop();\n    }\n\n    // Define a method to check if the stack is empty\n    isEmpty() {\n        return this.items.length === 0;\n    }\n\n    // Define a method to get the top element of the stack\n    peek() {\n        return this.items[this.items.length - 1];\n    }\n\n    // Define a method to get the size of the stack\n    size() {\n        return this.items.length;\n    }\n\n    // Define a method to clear the stack\n    clear() {\n        this.items = [];\n    }\n}\n\n// Create a stack\nconst stack = new Stack();\n\n// Push elements to the stack\nstack.push(1);\nstack.push(2);\nstack.push(3);\n\n// Pop elements from the stack\nconsole.log(stack.pop());\nconsole.log(stack.pop());\nconsole.log(stack.pop());\nconsole.log(stack.pop());\n\n// Check if the stack is empty\nconsole.log(stack.isEmpty());\n\n// Push elements to the stack\nstack.push(1);\nstack.push(2);\nstack.push(3);\n\n// Get the top element of the stack\nconsole.log(stack.peek());\n\n// Get the size of the stack\nconsole.log(stack.size());\n\n// Clear the stack\nstack.clear();\n\n// Check if the stack is empty\nconsole.log(stack.isEmpty());",
+				"Solution": "// Solution code\n// Stack implementation...\n\n// Define a class named 'Stack'\nclass Stack {\n    // Define a constructor to initialize the stack\n    constructor() {\n        this.items = [];\n    }\n\n    // Define a method to push an element to the stack\n    push(element) {\n        this.items.push(element);\n    }\n\n    // Define a method to pop an element from the stack\n    pop() {\n        if (this.items.length === 0) {\n            return 'Underflow';\n        }\n        return this.items.pop();\n    }\n\n    // Define a method to check if the stack is empty\n    isEmpty() {\n        return this.items.length === 0;\n    }\n\n    // Define a method to get the top element of the stack\n    peek() {\n        return this.items[this.items.length - 1];\n    }\n\n    // Define a method to get the size of the stack\n    size() {\n        return this.items.length;\n    }\n\n    // Define a method to clear the stack\n    clear() {\n        this.items = [];\n    }\n}\n\n// Create a stack\nconst stack = new Stack();\n\n// Push elements to the stack\nstack.push(1);\nstack.push(2);\nstack.push(3);\n\n// Pop elements from the stack\nconsole.log(stack.pop());\nconsole.log(stack.pop());\nconsole.log(stack.pop());\nconsole.log(stack.pop());\n\n// Check if the stack is empty\nconsole.log(stack.isEmpty());\n\n// Push elements to the stack\nstack.push(1);\nstack.push(2);\nstack.push(3);\n\n// Get the top element of the stack\nconsole.log(stack.peek());\n\n// Get the size of the stack\nconsole.log(stack.size());\n\n// Clear the stack\nstack.clear();\n\n// Check if the stack is empty\nconsole.log(stack.isEmpty());"
+			},
+			{
+				"Title": "Queue Implementation",
+				"Description": "Implement a queue data structure.",
+				"Instruction": "Create a queue and implement basic operations like enqueue and dequeue.",
+				"Level": "Intermediate",
+				"Status": "Complete",
+				"Code": "// Solution code\n// Queue implementation...\n\n// Define a class named 'Queue'\nclass Queue {\n    // Define a constructor to initialize the queue\n    constructor() {\n        this.items = [];\n    }\n\n    // Define a method to enqueue an element\n    enqueue(element) {\n        this.items.push(element);\n    }\n\n    // Define a method to dequeue an element\n    dequeue() {\n        if (this.items.length === 0) {\n            return 'Underflow';\n        }\n        return this.items.shift();\n    }\n\n    // Define a method to check if the queue is empty\n    isEmpty() {\n        return this.items.length === 0;\n    }\n\n    // Define a method to get the front element of the queue\n    front() {\n        if (this.items.length === 0) {\n            return 'No elements in Queue';\n        }\n        return this.items[0];\n    }\n\n    // Define a method to get the size of the queue\n    size() {\n        return this.items.length;\n    }\n\n    // Define a method to clear the queue\n    clear() {\n        this.items = [];\n    }\n}\n\n// Create a queue\nconst queue = new Queue();\n\n// Enqueue elements to the queue\nqueue.enqueue(1);\nqueue.enqueue(2);\nqueue.enqueue(3);\n\n// Dequeue elements from the queue\nconsole.log(queue.dequeue());\nconsole.log(queue.dequeue());\nconsole.log(queue.dequeue());\nconsole.log(queue.dequeue());\n\n// Check if the queue is empty\nconsole.log(queue.isEmpty());\n\n// Enqueue elements to the queue\nqueue.enqueue(1);\nqueue.enqueue(2);\nqueue.enqueue(3);\n\n// Get the front element of the queue\nconsole.log(queue.front());\n\n// Get the size of the queue\nconsole.log(queue.size());\n\n// Clear the queue\nqueue.clear();\n\n// Check if the queue is empty\nconsole.log(queue.isEmpty());",
+				"Solution": "// Solution code\n// Queue implementation...\n\n// Define a class named 'Queue'\nclass Queue {\n    // Define a constructor to initialize the queue\n    constructor() {\n        this.items = [];\n    }\n\n    // Define a method to enqueue an element\n    enqueue(element) {\n        this.items.push(element);\n    }\n\n    // Define a method to dequeue an element\n    dequeue() {\n        if (this.items.length === 0) {\n            return 'Underflow';\n        }\n        return this.items.shift();\n    }\n\n    // Define a method to check if the queue is empty\n    isEmpty() {\n        return this.items.length === 0;\n    }\n\n    // Define a method to get the front element of the queue\n    front() {\n        if (this.items.length === 0) {\n            return 'No elements in Queue';\n        }\n        return this.items[0];\n    }\n\n    // Define a method to get the size of the queue\n    size() {\n        return this.items.length;\n    }\n\n    // Define a method to clear the queue\n    clear() {\n        this.items = [];\n    }\n}\n\n// Create a queue\nconst queue = new Queue();\n\n// Enqueue elements to the queue\nqueue.enqueue(1);\nqueue.enqueue(2);\nqueue.enqueue(3);\n\n// Dequeue elements from the queue\nconsole.log(queue.dequeue());\nconsole.log(queue.dequeue());\nconsole.log(queue.dequeue());\nconsole.log(queue.dequeue());\n\n// Check if the queue is empty\nconsole.log(queue.isEmpty());\n\n// Enqueue elements to the queue\nqueue.enqueue(1);\nqueue.enqueue(2);\nqueue.enqueue(3);\n\n// Get the front element of the queue\nconsole.log(queue.front());\n\n// Get the size of the queue\nconsole.log(queue.size());\n\n// Clear the queue\nqueue.clear();\n\n// Check if the queue is empty\nconsole.log(queue.isEmpty());"
+			},
+			{
+				"Title": "Tree Traversal",
+				"Description": "Traverse a binary tree in different orders.",
+				"Instruction": "Write functions to perform in-order, pre-order, and post-order traversal of a binary tree.",
+				"Level": "Advanced",
+				"Status": "Complete",
+				"Code": "// Solution code\n// Tree Traversal...\n\n// Define a class named 'Node'\nclass Node {\n    // Define a constructor to initialize the node\n    constructor(data) {\n        this.data = data;\n        this.left = null;\n        this.right = null;\n    }\n}\n\n// Define a class named 'BinarySearchTree'\nclass BinarySearchTree {\n    // Define a constructor to initialize the tree\n    constructor() {\n        this.root = null;\n    }\n\n    // Define a method to insert a node\n    insert(data) {\n        // Create a new node\n        const newNode = new Node(data);\n\n        // Check if the tree is empty\n        if (this.root === null) {\n            // Set the new node as the root\n            this.root = newNode;\n        } else {\n            // Call the helper function to insert the node\n            this.insertNode(this.root, newNode);\n        }\n    }\n\n    // Define a helper function to insert a node\n    insertNode(node, newNode) {\n        // Check if the data of the new node is less than the data of the current node\n        if (newNode.data < node.data) {\n            // Check if the left child of the current node is null\n            if (node.left === null) {\n                // Set the new node as the left child of the current node\n                node.left = newNode;\n            } else {\n                // Recursively call the helper function to insert the node\n                this.insertNode(node.left, newNode);\n            }\n        } else {\n            // Check if the right child of the current node is null\n            if (node.right === null) {\n                // Set the new node as the right child of the current node\n                node.right = newNode;\n            } else {\n                // Recursively call the helper function to insert the node\n                this.insertNode(node.right, newNode);\n            }\n        }\n    }\n\n    // Define a method to perform in-order traversal\n    inOrder(node) {\n        if (node !== null) {\n            // Recursively call the helper function to perform in-order traversal\n            this.inOrder(node.left);\n\n            // Display the data of the current node\n            console.log(node.data);\n",
+				"Solution": "// Solution code\n// Tree Traversal...\n\n// Define a class named 'Node'\nclass Node {\n    // Define a constructor to initialize the node\n    constructor(data) {\n        this.data = data;\n        this.left = null;\n        this.right = null;\n    }\n}\n\n// Define a class named 'BinarySearchTree'\nclass BinarySearchTree {\n    // Define a constructor to initialize the tree\n    constructor() {\n        this.root = null;\n    }\n\n    // Define a method to insert a node\n    insert(data) {\n        // Create a new node\n        const newNode = new Node(data);\n\n        // Check if the tree is empty\n        if (this.root === null) {\n            // Set the new node as the root\n            this.root = newNode;\n        } else {\n            // Call the helper function to insert the node\n            this.insertNode(this.root, newNode);\n        }\n    }\n\n    // Define a helper function to insert a node\n    insertNode(node, newNode) {\n        // Check if the data of the new node is less than the data of the current node\n        if (newNode.data < node.data) {\n            // Check if the left child of the current node is null\n            if (node.left === null) {\n                // Set the new node as the left child of the current node\n                node.left = newNode;\n            } else {\n                // Recursively call the helper function to insert the node\n                this.insertNode(node.left, newNode);\n            }\n        } else {\n            // Check if the right child of the current node is null\n            if (node.right === null) {\n                // Set the new node as the right child of the current node\n                node.right = newNode;\n            } else {\n                // Recursively call the helper function to insert the node\n                this.insertNode(node.right, newNode);\n            }\n        }\n    }\n\n    // Define a method to perform in-order traversal\n    inOrder(node) {\n        if (node !== null) {\n            // Recursively call the helper function to perform in-order traversal\n            this.inOrder(node.left);\n\n            // Display the data of the current node\n            console.log(node.data);\n"
+			}
+		],
+		"Algorithms": [
+			{
+				"Title": "Factorial Calculation",
+				"Description": "Write a function to calculate the factorial of a number.",
+				"Instruction": "Implement a function that takes an integer as input and returns its factorial.",
+				"Level": "Beginner",
+				"Status": "In Progress",
+				"Code": "// Your code here\n// Factorial calculation\n\n// Function to calculate the factorial of a number\nfunction factorial(num) {\n",
+				"Solution": "// Solution code\n// Factorial calculation\n\n// Function to calculate the factorial of a number\nfunction factorial(num) {\n    // Check if the number is negative\n    if (num < 0) {\n        return -1;\n    }\n\n    // Check if the number is 0\n    if (num === 0) {\n        return 1;\n    }\n\n    // Calculate the factorial\n    let result = 1;\n    for (let i = num; i > 0; i--) {\n        result *= i;\n    }\n\n    // Return the result\n    return result;\n}\n\n// Get user input\nconst num = parseInt(prompt('Enter a number: '));\n\n// Calculate the factorial\nconst result = factorial(num);\n\n// Display the result\nconsole.log(`The factorial of ${num} is ${result}`);"
+			},
+			{
+				"Title": "Sorting Algorithms",
+				"Description": "Implement sorting algorithms (e.g., bubble sort, merge sort).",
+				"Instruction": "Write functions to perform sorting using different algorithms.",
+				"Level": "Beginner",
+				"Status": "Incomplete",
+				"Code": "// Your code here\n",
+				"Solution": "// Solution code\n// Sorting algorithms\n\n// Function to perform bubble sort\nfunction bubbleSort(array) {\n    // Loop through the array\n    for (let i = 0; i < array.length; i++) {\n        // Loop through the array from index 0 to array.length - i\n        for (let j = 0; j < array.length - i; j++) {\n            // Check if the current element is greater than the next element\n            if (array[j] > array[j + 1]) {\n                // Swap the elements\n                let temp = array[j];\n                array[j] = array[j + 1];\n                array[j + 1] = temp;\n            }\n        }\n    }\n\n    // Return the sorted array\n    return array;\n}\n\n// Function to perform merge sort\nfunction mergeSort(array) {\n    // Check if the array has only one element\n    if (array.length === 1) {\n        // Return the array\n        return array;\n    }\n\n    // Calculate the middle index\n    const mid = Math.floor(array.length / 2);\n\n    // Get the left and right subarrays\n    const left = array.slice(0, mid);\n    const right = array.slice(mid);\n\n    // Recursively call the mergeSort function to sort the left subarray\n    const sortedLeft = mergeSort(left);\n\n    // Recursively call the mergeSort function to sort the right subarray\n    const sortedRight = mergeSort(right);\n\n    // Return the sorted array\n    return merge(sortedLeft, sortedRight);\n}\n\n// Function to merge two sorted arrays\nfunction merge(left, right) {\n    // Create an empty array\n    const result = [];\n\n    // Define two pointers to track the indices of the left and right subarrays\n    let leftIndex = 0;\n    let rightIndex = 0;\n\n    // Loop until the pointers reach the end of the subarrays\n    while (leftIndex < left.length && rightIndex < right.length) {\n        // Check if the left element is less than the right element\n        if (left[leftIndex] < right[rightIndex]) {\n            // Push the left element to the result array\n            result"
+			},
+			{
+				"Title": "Graph Representation",
+				"Description": "Represent a graph using adjacency list or matrix.",
+				"Instruction": "Create a data structure to represent a graph and write functions to perform basic operations.",
+				"Level": "Intermediate",
+				"Status": "Incomplete",
+				"Code": "// Your code here\n",
+				"Solution": "// Solution code\n// Graph representation...\n\n// Define a class named 'Graph'\nclass Graph {\n    // Define a constructor to initialize the graph\n    constructor() {\n        this.adjacencyList = new Map();\n    }\n\n    // Define a method to add a vertex\n    addVertex(vertex) {\n        // Check if the vertex already exists\n        if (!this.adjacencyList.has(vertex)) {\n            // Add the vertex to the adjacency list\n            this.adjacencyList.set(vertex, []);\n        }\n    }\n\n    // Define a method to add an edge\n    addEdge(vertex1, vertex2) {\n        // Check if the vertices exist\n        if (this.adjacencyList.has(vertex1) && this.adjacencyList.has(vertex2)) {\n            // Add the edge\n            this.adjacencyList.get(vertex1).push(vertex2);\n            this.adjacencyList.get(vertex2).push(vertex1);\n        }\n    }\n\n    // Define a method to display the adjacency list\n    display() {\n        // Loop through the vertices\n        for (let [vertex, edge] of this.adjacencyList) {\n            // Display the vertex\n            console.log(vertex);\n\n            // Display the edges\n            console.log(edge);\n        }\n    }\n}\n\n// Create a graph\nconst graph = new Graph();\n\n// Add vertices\ngraph.addVertex('A');\ngraph.addVertex('B');\ngraph.addVertex('C');\ngraph.addVertex('D');\ngraph.addVertex('E');\ngraph.addVertex('F');\n\n// Add edges\ngraph.addEdge('A', 'B');\ngraph.addEdge('A', 'C');\ngraph.addEdge('B', 'D');\ngraph.addEdge('C', 'E');\ngraph.addEdge('D', 'E');\ngraph.addEdge('D', 'F');\ngraph.addEdge('E', 'F');\n\n// Display the adjacency list\ngraph.display();"
+			},
+			{
+				"Title": "Dynamic Programming",
+				"Description": "Solve a problem using dynamic programming approach.",
+				"Instruction": "Choose a problem and implement a solution using dynamic programming techniques.",
+				"Level": "Advanced",
+				"Status": "In Progress",
+				"Code": "// Your code here\n// Dynamic programming\n\n// Function to calculate the nth Fibonacci number\n",
+				"Solution": "// Solution code\n// Dynamic programming\n\n// Function to calculate the nth Fibonacci number\nfunction fibonacci(n) {\n    // Create an array to store the Fibonacci numbers\n    const fib = [];\n\n    // Initialize the first two Fibonacci numbers\n    fib[0] = 0;\n    fib[1] = 1;\n\n    // Loop through the array\n    for (let i = 2; i <= n; i++) {\n        // Calculate the next Fibonacci number\n        fib[i] = fib[i - 1] + fib[i - 2];\n    }\n\n    // Return the nth Fibonacci number\n    return fib[n];\n}\n\n// Get user input\nconst n = parseInt(prompt('Enter a number: '));\n\n// Calculate the nth Fibonacci number\nconst result = fibonacci(n);\n\n// Display the result\nconsole.log(`The ${n}th Fibonacci number is ${result}`);"
+			},
+			{
+				"Title": "Greedy Algorithms",
+				"Description": "Solve a problem using a greedy algorithm.",
+				"Instruction": "Choose a problem and implement a solution using a greedy approach.",
+				"Level": "Advanced",
+				"Status": "Failed",
+				"Code": "// Greedy algorithms\n\n// Function to calculate the minimum number of coins required to make a given amount\nfunction minCoins(coins, amount) {\n    // Sort the coins in descending order\n    coins.sort((a, b) => b + a);\n\n    // Initialize the number of coins\n    let numCoins = 0;\n\n    // Loop through the coins\n    for (let i = 0; i < coins.length; i++) {\n        // Check if the current coin is less than or equal to the amount\n        if (coins[i] <= amount) {\n            // Calculate the number of coins required\n            const count = Math.floor(amount / coins[i]);\n\n            // Update the number of coins\n            numCoins += count;\n\n            // Update the amount\n            amount -= count * coins[i];\n        }\n    }\n\n    // Return the number of coins\n    return numCoins;\n}\n\n// Get user input\nconst coins = [1, 5, 10, 25];\nconst amount = parseInt(prompt('Enter an amount: '));\n\n// Calculate the minimum number of coins required\nconst result = minCoins(coins, amount);\n\n// Display the result\nconsole.log(`The minimum number of coins required to make ${amount} is ${result}`);",
+				"Solution": "// Solution code\n// Greedy algorithms\n\n// Function to calculate the minimum number of coins required to make a given amount\nfunction minCoins(coins, amount) {\n    // Sort the coins in descending order\n    coins.sort((a, b) => b - a);\n\n    // Initialize the number of coins\n    let numCoins = 0;\n\n    // Loop through the coins\n    for (let i = 0; i < coins.length; i++) {\n        // Check if the current coin is less than or equal to the amount\n        if (coins[i] <= amount) {\n            // Calculate the number of coins required\n            const count = Math.floor(amount / coins[i]);\n\n            // Update the number of coins\n            numCoins += count;\n\n            // Update the amount\n            amount -= count * coins[i];\n        }\n    }\n\n    // Return the number of coins\n    return numCoins;\n}\n\n// Get user input\nconst coins = [1, 5, 10, 25];\nconst amount = parseInt(prompt('Enter an amount: '));\n\n// Calculate the minimum number of coins required\nconst result = minCoins(coins, amount);\n\n// Display the result\nconsole.log(`The minimum number of coins required to make ${amount} is ${result}`);"
+			}
+		],
+		"Introduction to Scratch Programming": [
+			{
+				"Title": "Control Movement",
+				"Description": "Control the movement of a sprite.",
+				"Instruction": "Create a program that moves a sprite in different directions based on user input.",
+				"Level": "Beginner",
+				"Status": "Complete",
+				"Code": "when green flag clicked \nforever \nif key [right arrow v] pressed \nchange x by (speed) \nend",
+				"Solution": "when green flag clicked \nforever \nif key [right arrow v] pressed \nchange x by (speed) \nend"
+			},
+			{
+				"Title": "Change Appearance",
+				"Description": "Change the appearance of a sprite.",
+				"Instruction": "Create a program that changes the appearance of a sprite based on user input.",
+				"Level": "Beginner",
+				"Status": "Complete",
+				"Code": "when green flag clicked \nforever \nif key [space v] pressed \nswitch costume to [costume2 v] \nend",
+				"Solution": "when green flag clicked \nforever \nif key [space v] pressed \nswitch costume to [costume2 v] \nend"
+			},
+			{
+				"Title": "Event Response",
+				"Description": "Create a program that responds to events.",
+				"Instruction": "Create a program that displays a message when the user clicks on a sprite.",
+				"Level": "Beginner",
+				"Status": "Complete",
+				"Code": "when green flag clicked \nforever \nif <mouse down?> then \nsay [Hello!] for (2) secs \nend",
+				"Solution": "when green flag clicked \nforever \nif <mouse down?> then \nsay [Hello!] for (2) secs \nend"
+			},
+			{
+				"Title": "Points Counter",
+				"Description": "Create a program that keeps track of points.",
+				"Instruction": "Create a program that increments a counter when the user clicks on a sprite.",
+				"Level": "Intermediate",
+				"Status": "Complete",
+				"Code": "when green flag clicked \nforever \nif <mouse down?> then \nchange [points v] by (1) \nend",
+				"Solution": "when green flag clicked \nset score to (0) \n\nwhen flag clicked\nforever\nif touching [target v] \nchange score by (1) \nend"
+			},
+			{
+				"Title": "Repetitions and Cycles",
+				"Description": "Create a program that repeats a sequence of actions.",
+				"Instruction": "Create a program that moves a sprite in a zigzag pattern.",
+				"Level": "Intermediate",
+				"Status": "Complete",
+				"Code": "when green flag clicked \nforever \nrepeat (10) \nmove (10) steps \nturn cw (90) degrees \nmove (10) steps \nturn ccw (90) degrees \nend",
+				"Solution": "when green flag clicked \nforever \nrepeat (10) \nmove (10) steps \nturn cw (90) degrees \nmove (10) steps \nturn ccw (90) degrees \nend"
+			}
+		],
+		"Introduction to Python Programming": [
+			{
+				"Title": "Hello World",
+				"Description": "Write a simple program to print 'Hello, World!' to the console.",
+				"Instruction": "Use the 'print' statement to display the text 'Hello, World!'",
+				"Level": "Beginner",
+				"Status": "Incomplete",
+				"Code": "# Your code here\n",
+				"Solution": "# Solution code\nprint('Hello, World!')"
+			},
+			{
+				"Title": "Calculator Program",
+				"Description": "Create a basic calculator program that performs addition, subtraction, multiplication, and division.",
+				"Instruction": "Take user input for two numbers and perform the selected arithmetic operation.",
+				"Level": "Intermediate",
+				"Status": "Incomplete",
+				"Code": "// Your code here\n",
+				"Solution": "# Solution code\n# Calculator program\n\n# Function to perform addition\n\ndef add(num1, num2):\n    return num1 + num2\n\n# Function to perform subtraction\n\ndef subtract(num1, num2):\n    return num1 - num2\n\n# Function to perform multiplication\n\ndef multiply(num1, num2):\n    return num1 * num2\n\n# Function to perform division\n\ndef divide(num1, num2):\n    return num1 / num2\n\n# Get user input\nnum1 = float(input('Enter first number: '))\nnum2 = float(input('Enter second number: '))\n\n# Display menu\nprint('Select operation:')\nprint('1. Add')\nprint('2. Subtract')\nprint('3. Multiply')\nprint('4. Divide')\n\n# Get user choice\nchoice = input('Enter choice (1/2/3/4): ')\n\n# Perform operation based on user choice\nif choice == '1':\n    print(num1, '+', num2, '=', add(num1, num2))\nelif choice == '2':\n    print(num1, '-', num2, '=', subtract(num1, num2))\nelif choice == '3':\n    print(num1, '*', num2, '=', multiply(num1, num2))\nelif choice == '4':\n    print(num1, '/', num2, '=', divide(num1, num2))\nelse:\n    print('Invalid choice')"
+			},
+			{
+				"Title": "File Handling",
+				"Description": "Learn to read from and write to files in Python.",
+				"Instruction": "Create a program that reads data from a text file, performs some operation, and writes the result to another file.",
+				"Level": "Intermediate",
+				"Status": "Incomplete",
+				"Code": "// Your code here\n",
+				"Solution": "# Solution code\n# File handling\n\n# Open the input file\ninputFile = open('input.txt', 'r')\n\n# Open the output file\noutputFile = open('output.txt', 'w')\n\n# Read the input file line by line\nfor line in inputFile:\n    # Perform some operation on the line\n    result = line.upper()\n    # Write the result to the output file\n    outputFile.write(result)\n\n# Close the input file\ninputFile.close()\n\n# Close the output file\noutputFile.close()"
+			},
+			{
+				"Title": "Web Scraping",
+				"Description": "Explore web scraping using Python libraries.",
+				"Instruction": "Write a program to extract information from a website (e.g., news headlines) using web scraping techniques.",
+				"Level": "Advanced",
+				"Status": "Incomplete",
+				"Code": "// Your code here\n",
+				"Solution": "# Solution code\n# Web scraping\n\n# Import the required libraries\nimport requests\nfrom bs4 import BeautifulSoup\n\n# Get the HTML content of the website\nurl = 'https://www.nytimes.com/'\nresponse = requests.get(url)\n\n# Parse the HTML content\nsoup = BeautifulSoup(response.text, 'html.parser')\n\n# Get the headlines\nheadlines = soup.find_all('h2', class_='css-1qwxefa esl82me0')\n\n# Display the headlines\nfor headline in headlines:\n    print(headline.text)"
+			},
+			{
+				"Title": "Object-Oriented Programming (OOP)",
+				"Description": "Introduction to object-oriented concepts in Python.",
+				"Instruction": "Create a program that defines classes and demonstrates inheritance, encapsulation, and polymorphism.",
+				"Level": "Advanced",
+				"Status": "Incomplete",
+				"Code": "// Your code here\n",
+				"Solution": "# Solution code\n# Object-oriented programming\n\n# Define a class named 'Person'\nclass Person:\n    # Define a constructor to initialize the attributes\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age\n\n    # Define a method to display the details\n    def displayDetails(self):\n        print('Name:', self.name)\n        print('Age:', self.age)\n\n# Define a class named 'Employee' that inherits from the 'Person' class\nclass Employee(Person):\n    # Define a constructor to initialize the attributes\n    def __init__(self, name, age, salary):\n        # Call the constructor of the parent class\n        super().__init__(name, age)\n        self.salary = salary\n\n    # Define a method to display the details\n    def displayDetails(self):\n        # Call the method of the parent class\n        super().displayDetails()\n        print('Salary:', self.salary)\n\n# Create an object of the 'Employee' class\nemp = Employee('John', 30, 50000)\n\n# Display the details of the employee\nemp.displayDetails()"
+			}
+		],
+		"Introduction to Java Programming": [
+			{
+				"Title": "Hello World",
+				"Description": "Write a simple program to print 'Hello, World!' to the console in Java.",
+				"Instruction": "Use the 'System.out.println' statement to display the text 'Hello, World!'",
+				"Level": "Beginner",
+				"Status": "Incomplete",
+				"Code": "// Your code here\n",
+				"Solution": "// Solution code\nSystem.out.println(\"Hello, World!\");"
+			},
+			{
+				"Title": "Calculator Program",
+				"Description": "Create a basic calculator program in Java that performs addition, subtraction, multiplication, and division.",
+				"Instruction": "Take user input for two numbers and perform the selected arithmetic operation using methods.",
+				"Level": "Intermediate",
+				"Status": "Complete",
+				"Code": "// Your code here\n// Calculator program\n\n// Function to perform addition\npublic static double add(double num1, double num2) {\n    return num1 + num2;\n}\n\n// Function to perform subtraction\npublic static double subtract(double num1, double num2) {\n    return num1 - num2;\n}\n\n// Function to perform multiplication\npublic static double multiply(double num1, double num2) {\n    return num1 * num2;\n}\n\n// Function to perform division\npublic static double divide(double num1, double num2) {\n    return num1 / num2;\n}\n\n// Main method\npublic static void main(String[] args) {\n    // Get user input\n    Scanner input = new Scanner(System.in);\n    System.out.print(\"Enter first number: \");\n    double num1 = input.nextDouble();\n    System.out.print(\"Enter second number: \");\n    double num2 = input.nextDouble();\n\n    // Display menu\n    System.out.println(\"Select operation:\");\n    System.out.println(\"1. Add\");\n    System.out.println(\"2. Subtract\");\n    System.out.println(\"3. Multiply\");\n    System.out.println(\"4. Divide\");\n\n    // Get user choice\n    System.out.print(\"Enter choice (1/2/3/4): \");\n    int choice = input.nextInt();\n\n    // Perform operation based on user choice\n    if (choice == 1) {\n        System.out.println(num1 + \" + \" + num2 + \" = \" + add(num1, num2));\n    } else if (choice == 2) {\n        System.out.println(num1 + \" - \" + num2 + \" = \" + subtract(num1, num2));\n    } else if (choice == 3) {\n        System.out.println(num1 + \" * \" + num2 + \" = \" + multiply(num1, num2));\n    } else if (choice == 4) {\n        System.out.println(num1 + \" / \" + num2 + \" = \" + divide(num1, num2));\n    } else {\n        System.out.println(\"Invalid choice\");\n",
+				"Solution": "// Solution code\n// Calculator program\n\n// Function to perform addition\npublic static double add(double num1, double num2) {\n    return num1 + num2;\n}\n\n// Function to perform subtraction\npublic static double subtract(double num1, double num2) {\n    return num1 - num2;\n}\n\n// Function to perform multiplication\npublic static double multiply(double num1, double num2) {\n    return num1 * num2;\n}\n\n// Function to perform division\npublic static double divide(double num1, double num2) {\n    return num1 / num2;\n}\n\n// Main method\npublic static void main(String[] args) {\n    // Get user input\n    Scanner input = new Scanner(System.in);\n    System.out.print(\"Enter first number: \");\n    double num1 = input.nextDouble();\n    System.out.print(\"Enter second number: \");\n    double num2 = input.nextDouble();\n\n    // Display menu\n    System.out.println(\"Select operation:\");\n    System.out.println(\"1. Add\");\n    System.out.println(\"2. Subtract\");\n    System.out.println(\"3. Multiply\");\n    System.out.println(\"4. Divide\");\n\n    // Get user choice\n    System.out.print(\"Enter choice (1/2/3/4): \");\n    int choice = input.nextInt();\n\n    // Perform operation based on user choice\n    if (choice == 1) {\n        System.out.println(num1 + \" + \" + num2 + \" = \" + add(num1, num2));\n    } else if (choice == 2) {\n        System.out.println(num1 + \" - \" + num2 + \" = \" + subtract(num1, num2));\n    } else if (choice == 3) {\n        System.out.println(num1 + \" * \" + num2 + \" = \" + multiply(num1, num2));\n    } else if (choice == 4) {\n        System.out.println(num1 + \" / \" + num2 + \" = \" + divide(num1, num2));\n    } else {\n        System.out.println(\"Invalid choice\");\n"
+			},
+			{
+				"Title": "File Handling",
+				"Description": "Learn to read from and write to files in Java.",
+				"Instruction": "Create a program that reads data from a text file, performs some operation, and writes the result to another file.",
+				"Level": "Intermediate",
+				"Status": "Complete",
+				"Code": "// Your code here\n// File handling\n\nimport java.io.*;\n\npublic class FileHandling {\n    public static void main(String[] args) {\n        try {\n            // Open the input file\n            BufferedReader inputFile = new BufferedReader(new FileReader(\"input.txt\"));\n\n            // Open the output file\n            BufferedWriter outputFile = new BufferedWriter(new FileWriter(\"output.txt\"));\n\n            // Read the input file line by line\n            String line;\n            while ((line = inputFile.readLine()) != null) {\n                // Perform some operation on the line\n                String result = line.toUpperCase();\n\n                // Write the result to the output file\n                outputFile.write(result);\n            }\n\n            // Close the input file\n            inputFile.close();\n\n            // Close the output file\n            outputFile.close();\n        } catch (IOException e) {\n            System.out.println(\"An error occurred.\");\n            e.printStackTrace();\n        }\n    }\n}",
+				"Solution": "// Solution code\n// File handling\n\nimport java.io.*;\n\npublic class FileHandling {\n    public static void main(String[] args) {\n        try {\n            // Open the input file\n            BufferedReader inputFile = new BufferedReader(new FileReader(\"input.txt\"));\n\n            // Open the output file\n            BufferedWriter outputFile = new BufferedWriter(new FileWriter(\"output.txt\"));\n\n            // Read the input file line by line\n            String line;\n            while ((line = inputFile.readLine()) != null) {\n                // Perform some operation on the line\n                String result = line.toUpperCase();\n\n                // Write the result to the output file\n                outputFile.write(result);\n            }\n\n            // Close the input file\n            inputFile.close();\n\n            // Close the output file\n            outputFile.close();\n        } catch (IOException e) {\n            System.out.println(\"An error occurred.\");\n            e.printStackTrace();\n        }\n    }\n}"
+			},
+			{
+				"Title": "Multithreading",
+				"Description": "Explore multithreading in Java.",
+				"Instruction": "Write a program that demonstrates the use of multiple threads to perform parallel tasks.",
+				"Level": "Advanced",
+				"Status": "Complete",
+				"Code": "// Your code here\n// Multithreading\n\n// Define a class that implements the Runnable interface\nclass MyRunnable implements Runnable {\n    // Define a method to perform some task\n    public void run() {\n        System.out.println(\"Thread is running...\");\n    }\n}\n\n// Main method\npublic class Multithreading {\n    public static void main(String[] args) {\n        // Create an object of the MyRunnable class\n        MyRunnable myRunnable = new MyRunnable();\n\n        // Create a thread using the MyRunnable object\n        Thread thread = new Thread(myRunnable);\n\n        // Start the thread\n        thread.start();\n    }\n}",
+				"Solution": "// Solution code\n// Multithreading\n\n// Define a class that implements the Runnable interface\nclass MyRunnable implements Runnable {\n    // Define a method to perform some task\n    public void run() {\n        System.out.println(\"Thread is running...\");\n    }\n}\n\n// Main method\npublic class Multithreading {\n    public static void main(String[] args) {\n        // Create an object of the MyRunnable class\n        MyRunnable myRunnable = new MyRunnable();\n\n        // Create a thread using the MyRunnable object\n        Thread thread = new Thread(myRunnable);\n\n        // Start the thread\n        thread.start();\n    }\n}"
+			},
+			{
+				"Title": "GUI Application",
+				"Description": "Introduction to Java Swing for creating graphical user interfaces.",
+				"Instruction": "Design a simple GUI application that takes user input, performs an operation, and displays the result.",
+				"Level": "Advanced",
+				"Status": "Complete",
+				"Code": "// Your code here\n// GUI application\n\nimport javax.swing.*;\nimport java.awt.*;\nimport java.awt.event.*;\n\npublic class GUIApplication {\n    public static void main(String[] args) {\n        // Create a frame\n        JFrame frame = new JFrame(\"GUI Application\");\n\n        // Create a panel\n        JPanel panel = new JPanel();\n\n        // Create a label\n        JLabel label = new JLabel(\"Enter your name:\");\n\n        // Create a text field\n        JTextField textField = new JTextField(20);\n\n        // Create a button\n        JButton button = new JButton(\"Submit\");\n\n        // Add the components to the panel\n        panel.add(label);\n        panel.add(textField);\n        panel.add(button);\n\n        // Add the panel to the frame\n        frame.add(panel);\n\n        // Set the frame size\n        frame.setSize(300, 100);\n\n        // Set the frame to be visible\n        frame.setVisible(true);\n\n        // Set the default close operation\n        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);\n\n        // Add an action listener to the button\n        button.addActionListener(new ActionListener() {\n            public void actionPerformed(ActionEvent e) {\n                // Get the text from the text field\n                String name = textField.getText();\n\n                // Display a message dialog\n                JOptionPane.showMessageDialog(frame, \"Hello, \" + name);\n            }\n        });\n    }\n}",
+				"Solution": "// Solution code\n// GUI application\n\nimport javax.swing.*;\nimport java.awt.*;\nimport java.awt.event.*;\n\npublic class GUIApplication {\n    public static void main(String[] args) {\n        // Create a frame\n        JFrame frame = new JFrame(\"GUI Application\");\n\n        // Create a panel\n        JPanel panel = new JPanel();\n\n        // Create a label\n        JLabel label = new JLabel(\"Enter your name:\");\n\n        // Create a text field\n        JTextField textField = new JTextField(20);\n\n        // Create a button\n        JButton button = new JButton(\"Submit\");\n\n        // Add the components to the panel\n        panel.add(label);\n        panel.add(textField);\n        panel.add(button);\n\n        // Add the panel to the frame\n        frame.add(panel);\n\n        // Set the frame size\n        frame.setSize(300, 100);\n\n        // Set the frame to be visible\n        frame.setVisible(true);\n\n        // Set the default close operation\n        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);\n\n        // Add an action listener to the button\n        button.addActionListener(new ActionListener() {\n            public void actionPerformed(ActionEvent e) {\n                // Get the text from the text field\n                String name = textField.getText();\n\n                // Display a message dialog\n                JOptionPane.showMessageDialog(frame, \"Hello, \" + name);\n            }\n        });\n    }\n}"
+			}
+		],
+		"Introduction to JavaScript Programming": [
+			{
+				"Title": "Hello World",
+				"Description": "Write a simple program to display 'Hello, World!' in the console using JavaScript.",
+				"Instruction": "Use the 'console.log' statement to output the text 'Hello, World!'",
+				"Level": "Beginner",
+				"Status": "Complete",
+				"Code": "// Your code here\nconsole.log('Hello, World!');",
+				"Solution": "// Solution code\nconsole.log('Hello, World!');"
+			},
+			{
+				"Title": "Interactive Quiz",
+				"Description": "Create an interactive quiz program using JavaScript.",
+				"Instruction": "Design a set of questions, take user input, and provide feedback on the correctness of the answers.",
+				"Level": "Intermediate",
+				"Status": "Complete",
+				"Code": "// Your code here\n// Interactive quiz\n\n// Define a function to display a question and get user input\nfunction askQuestion(question, answer) {\n    // Display the question\n    const userAnswer = prompt(question);\n\n    // Check if the answer is correct\n    if (userAnswer === answer) {\n        alert('Correct!');\n    } else {\n        alert('Incorrect!');\n    }\n}\n\n// Ask the questions\naskQuestion('What is the capital of India?', 'New Delhi');\naskQuestion('What is the capital of France?', 'Paris');\naskQuestion('What is the capital of the United States?', 'Washington, D.C.');",
+				"Solution": "// Solution code\n// Interactive quiz\n\n// Define a function to display a question and get user input\nfunction askQuestion(question, answer) {\n    // Display the question\n    const userAnswer = prompt(question);\n\n    // Check if the answer is correct\n    if (userAnswer === answer) {\n        alert('Correct!');\n    } else {\n        alert('Incorrect!');\n    }\n}\n\n// Ask the questions\naskQuestion('What is the capital of India?', 'New Delhi');\naskQuestion('What is the capital of France?', 'Paris');\naskQuestion('What is the capital of the United States?', 'Washington, D.C.');"
+			},
+			{
+				"Title": "Weather App (API Integration)",
+				"Description": "Build a simple weather application that fetches data from a public API using JavaScript.",
+				"Instruction": "Use an API to retrieve weather information based on user input (e.g., city name).",
+				"Level": "Intermediate",
+				"Status": "Complete",
+				"Code": "// Your code here\n// Weather app\n\n// Define a function to get weather information\nfunction getWeather(city) {\n    // Create a new XMLHttpRequest object\n    const request = new XMLHttpRequest();\n\n    // Define a callback function\n    request.onload = function() {\n        // Check the status\n        if (request.status === 200) {\n            // Display the result\n            alert(request.responseText);\n        } else {\n            // Display an error message\n            alert('An error occurred.');\n        }\n    };\n\n    // Define the request URL\n    const url = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=YOUR_API_KEY';\n\n    // Initialize a GET request\n    request.open('GET', url);\n\n    // Send the request\n    request.send();\n}\n\n// Get user input\nconst city = prompt('Enter city name:');\n\n// Get weather information\ngetWeather(city);",
+				"Solution": "// Solution code\n// Weather app\n\n// Define a function to get weather information\nfunction getWeather(city) {\n    // Create a new XMLHttpRequest object\n    const request = new XMLHttpRequest();\n\n    // Define a callback function\n    request.onload = function() {\n        // Check the status\n        if (request.status === 200) {\n            // Display the result\n            alert(request.responseText);\n        } else {\n            // Display an error message\n            alert('An error occurred.');\n        }\n    };\n\n    // Define the request URL\n    const url = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=YOUR_API_KEY';\n\n    // Initialize a GET request\n    request.open('GET', url);\n\n    // Send the request\n    request.send();\n}\n\n// Get user input\nconst city = prompt('Enter city name:');\n\n// Get weather information\ngetWeather(city);"
+			},
+			{
+				"Title": "Asynchronous JavaScript (Promises)",
+				"Description": "Understand asynchronous programming in JavaScript using Promises.",
+				"Instruction": "Write a program that demonstrates the use of Promises to handle asynchronous operations.",
+				"Level": "Advanced",
+				"Status": "Complete",
+				"Code": "// Your code here\n// Asynchronous JavaScript\n\n// Define a function to get weather information\nfunction getWeather(city) {\n    // Create a new Promise object\n    const promise = new Promise(function(resolve, reject) {\n        // Create a new XMLHttpRequest object\n        const request = new XMLHttpRequest();\n\n        // Define a callback function\n        request.onload = function() {\n            // Check the status\n            if (request.status === 200) {\n                // Resolve the promise\n                resolve(request.responseText);\n            } else {\n                // Reject the promise\n                reject('An error occurred.');\n            }\n        };\n\n        // Define the request URL\n        const url = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=YOUR_API_KEY';\n\n        // Initialize a GET request\n        request.open('GET', url);\n\n        // Send the request\n        request.send();\n    });\n\n    // Return the promise\n    return promise;\n}\n\n// Get user input\nconst city = prompt('Enter city name:');\n\n// Get weather information\ngetWeather(city)\n    .then(function(response) {\n        // Display the result\n        alert(response);\n    })\n    .catch(function(error) {\n        // Display an error message\n        alert(error);\n    });",
+				"Solution": "// Solution code\n// Asynchronous JavaScript\n\n// Define a function to get weather information\nfunction getWeather(city) {\n    // Create a new Promise object\n    const promise = new Promise(function(resolve, reject) {\n        // Create a new XMLHttpRequest object\n        const request = new XMLHttpRequest();\n\n        // Define a callback function\n        request.onload = function() {\n            // Check the status\n            if (request.status === 200) {\n                // Resolve the promise\n                resolve(request.responseText);\n            } else {\n                // Reject the promise\n                reject('An error occurred.');\n            }\n        };\n\n        // Define the request URL\n        const url = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=YOUR_API_KEY';\n\n        // Initialize a GET request\n        request.open('GET', url);\n\n        // Send the request\n        request.send();\n    });\n\n    // Return the promise\n    return promise;\n}\n\n// Get user input\nconst city = prompt('Enter city name:');\n\n// Get weather information\ngetWeather(city)\n    .then(function(response) {\n        // Display the result\n        alert(response);\n    })\n    .catch(function(error) {\n        // Display an error message\n        alert(error);\n    });"
+			},
+			{
+				"Title": "React.js Component (Optional)",
+				"Description": "Explore building a simple React.js component.",
+				"Instruction": "Create a basic React.js component that renders content and manages state.",
+				"Level": "Advanced",
+				"Status": "Incomplete",
+				"Code": "// Your code here\n",
+				"Solution": "// Solution code\n// React.js component\n\n// Define a class named 'App'\nclass App extends React.Component {\n    // Define a constructor to initialize the state\n    constructor(props) {\n        super(props);\n        this.state = {\n            count: 0\n        };\n    }\n\n    // Define a method to increment the count\n    incrementCount() {\n        this.setState({\n            count: this.state.count + 1\n        });\n    }\n\n    // Define a method to decrement the count\n    decrementCount() {\n        this.setState({\n            count: this.state.count - 1\n        });\n    }\n\n    // Define a method to render the component\n    render() {\n        return (\n            <div>\n                <h1>Count: {this.state.count}</h1>\n                <button onClick={() => this.incrementCount()}>Increment</button>\n                <button onClick={() => this.decrementCount()}>Decrement</button>\n            </div>\n        );\n    }\n}\n\n// Render the component\nReactDOM.render(<App />, document.getElementById('root'));"
+			}
+		],
+		"Web Development Basics": [
+			{
+				"Title": "HTML Basics",
+				"Description": "Create a simple HTML page.",
+				"Instruction": "Write the basic structure of an HTML page with headings, paragraphs, and links.",
+				"Level": "Beginner",
+				"Status": "Incomplete",
+				"Code": "// Your code here\n",
+				"Solution": "<!DOCTYPE html>\n<html>\n    <head>\n        <title>HTML Basics</title>\n    </head>\n    <body>\n        <h1>HTML Basics</h1>\n        <p>This is a paragraph.</p>\n        <a href=\"https://www.google.com\">Google</a>\n    </body>\n</html>"
+			},
+			{
+				"Title": "CSS Styling",
+				"Description": "Apply styles to HTML elements using CSS.",
+				"Instruction": "Create a CSS file and apply styles to format the HTML page.",
+				"Level": "Beginner",
+				"Status": "Incomplete",
+				"Code": "// Your code here\n",
+				"Solution": "body {\n    font-family: Arial, Helvetica, sans-serif;\n}\n\nh1 {\n    color: blue;\n}\n\np {\n    color: green;\n}\n\na {\n    color: red;\n}"
+			},
+			{
+				"Title": "Responsive Design",
+				"Description": "Create a responsive layout using media queries.",
+				"Instruction": "Modify your HTML and CSS to make the page responsive on different devices.",
+				"Level": "Intermediate",
+				"Status": "In Progress",
+				"Code": "// Your code here\nbody {\n    font-family: Arial, Helvetica, sans-serif;\n}\n\nh1 {\n",
+				"Solution": "body {\n    font-family: Arial, Helvetica, sans-serif;\n}\n\nh1 {\n    color: blue;\n}\n\np {\n    color: green;\n}\n\na {\n    color: red;\n}\n\n@media only screen and (max-width: 600px) {\n    body {\n        background-color: lightblue;\n    }\n}"
+			},
+			{
+				"Title": "JavaScript Interactivity",
+				"Description": "Add interactive features using JavaScript.",
+				"Instruction": "Integrate JavaScript to create interactive elements such as buttons or a slideshow.",
+				"Level": "Intermediate",
+				"Status": "Complete",
+				"Code": "// JavaScript interactivity...\n\n// Define a function to display a message\nfunction showMessage() {\n    alert('Hello, World!');\n}\n\n// Define a function to change the image\nfunction changeImage() {\n    document.getElementById('image').src = 'image2.jpg';\n}",
+				"Solution": "// Solution code\n// JavaScript interactivity...\n\n// Define a function to display a message\nfunction showMessage() {\n    alert('Hello, World!');\n}\n\n// Define a function to change the image\nfunction changeImage() {\n    document.getElementById('image').src = 'image2.jpg';\n}"
+			},
+			{
+				"Title": "Web Forms",
+				"Description": "Create a simple web form with HTML.",
+				"Instruction": "Design and implement a web form with various input types and form validation.",
+				"Level": "Intermediate",
+				"Status": "Failed",
+				"Code": "// Solution code\n// Web forms\n\n<!DOCTYPE html>\n<html>\n    <Thead>\n        <title>Web Forms</title>\n    </head>\n    <body>\n        <h1>Web Forms</h1>\n        <form>\n            <label for=\"name\">Name:</label>\n            <input type=\"text\" id=\"name\" name=\"name\" required>\n            <br>\n            <label for=\"email\">Email:</label>\n            <input type=\"email\" id=\"email\" name=\"email\" required>\n            <br>\n            <label for=\"phone\">Phone:</label>\n            <input type=\"tel\" id=\"phone\" name=\"phone\" required>\n            <br>\n            <label for=\"message\">Message:</label>\n            <textarea id=\"message\" name=\"message\" required></textarea>\n            <br>\n            <input type=\"submit\" value=\"Submit\">\n        </form>\n    </body>\n</html>",
+				"Solution": "// Solution code\n// Web forms\n\n<!DOCTYPE html>\n<html>\n    <head>\n        <title>Web Forms</title>\n    </head>\n    <body>\n        <h1>Web Forms</h1>\n        <form>\n            <label for=\"name\">Name:</label>\n            <input type=\"text\" id=\"name\" name=\"name\" required>\n            <br>\n            <label for=\"email\">Email:</label>\n            <input type=\"email\" id=\"email\" name=\"email\" required>\n            <br>\n            <label for=\"phone\">Phone:</label>\n            <input type=\"tel\" id=\"phone\" name=\"phone\" required>\n            <br>\n            <label for=\"message\">Message:</label>\n            <textarea id=\"message\" name=\"message\" required></textarea>\n            <br>\n            <input type=\"submit\" value=\"Submit\">\n        </form>\n    </body>\n</html>"
+			}
+		],
+		"Excel Macros and VBA": [
+			{
+				"Title": "Record a Macro",
+				"Description": "Use the macro recorder to automate a simple task in Excel.",
+				"Instruction": "Record a macro that formats a range of cells with a specific color, font, and border.",
+				"Level": "Beginner",
+				"Status": "Complete",
+				"Code": "' The following code was generated by the macro recorder\nSub FormatCells()\n' FormatCells Macro\n' Format a range of cells with a specific color, font, and border\n\n' Select the range of cells\nRange(\"A1:C5\").Select\n' Change the fill color to yellow\nWith Selection.Interior\n    .Pattern = xlSolid\n    .PatternColorIndex = xlAutomatic\n    .Color = 65535\n    .TintAndShade = 0\n    .PatternTintAndShade = 0\nEnd With\n' Change the font to Arial, size 12, bold\nWith Selection.Font\n    .Name = \"Arial\"\n    .FontStyle = \"Bold\"\n    .Size = 12\n    .Strikethrough = False\n    .Superscript = False\n    .Subscript = False\n    .OutlineFont = False\n    .Shadow = False\n    .Underline = xlUnderlineStyleNone\n    .ThemeColor = xlThemeColorLight1\n    .TintAndShade = 0\n    .ThemeFont = xlThemeFontNone\nEnd With\n' Add a thin black border around the cells\nSelection.Borders(xlDiagonalDown).LineStyle = xlNone\nSelection.Borders(xlDiagonalUp).LineStyle = xlNone\nWith Selection.Borders(xlEdgeLeft)\n    .LineStyle = xlContinuous\n    .ColorIndex = 0\n    .TintAndShade = 0\n    .Weight = xlThin\nEnd With\nWith Selection.Borders(xlEdgeTop)\n    .LineStyle = xlContinuous\n    .ColorIndex = 0\n    .TintAndShade = 0\n    .Weight = xlThin\nEnd With\nWith Selection.Borders(xlEdgeBottom)\n    .LineStyle = xlContinuous\n    .ColorIndex = 0\n    .TintAndShade = 0\n    .Weight = xlThin\nEnd With\nWith Selection.Borders(xlEdgeRight)\n    .LineStyle = xlContinuous\n    .ColorIndex = 0\n    .TintAndShade = 0\n    .Weight = xlThin\nEnd With\nWith Selection.Borders(xlInsideVertical)\n    .LineStyle = xlContinuous\n    .ColorIndex = 0\n    .TintAndShade = 0\n    .Weight = xlThin\nEnd With\nWith Selection.Borders(xlInsideHorizontal)\n    .LineStyle = xlContinuous\n    .ColorIndex = 0\n    .TintAndShade = 0\n    .Weight = xlThin\nEnd With\nEnd Sub",
+				"Solution": "' Solution code\n' The following code was generated by the macro recorder\nSub FormatCells()\n' FormatCells Macro\n' Format a range of cells with a specific color, font, and border\n\n' Select the range of cells\nRange(\"A1:C5\").Select\n' Change the fill color to yellow\nWith Selection.Interior\n    .Pattern = xlSolid\n    .PatternColorIndex = xlAutomatic\n    .Color = 65535\n    .TintAndShade = 0\n    .PatternTintAndShade = 0\nEnd With\n' Change the font to Arial, size 12, bold\nWith Selection.Font\n    .Name = \"Arial\"\n    .FontStyle = \"Bold\"\n    .Size = 12\n    .Strikethrough = False\n    .Superscript = False\n    .Subscript = False\n    .OutlineFont = False\n    .Shadow = False\n    .Underline = xlUnderlineStyleNone\n    .ThemeColor = xlThemeColorLight1\n    .TintAndShade = 0\n    .ThemeFont = xlThemeFontNone\nEnd With\n' Add a thin black border around the cells\nSelection.Borders(xlDiagonalDown).LineStyle = xlNone\nSelection.Borders(xlDiagonalUp).LineStyle = xlNone\nWith Selection.Borders(xlEdgeLeft)\n    .LineStyle = xlContinuous\n    .ColorIndex = 0\n    .TintAndShade = 0\n    .Weight = xlThin\nEnd With\nWith Selection.Borders(xlEdgeTop)\n    .LineStyle = xlContinuous\n    .ColorIndex = 0\n    .TintAndShade = 0\n    .Weight = xlThin\nEnd With\nWith Selection.Borders(xlEdgeBottom)\n    .LineStyle = xlContinuous\n    .ColorIndex = 0\n    .TintAndShade = 0\n    .Weight = xlThin\nEnd With\nWith Selection.Borders(xlEdgeRight)\n    .LineStyle = xlContinuous\n    .ColorIndex = 0\n    .TintAndShade = 0\n    .Weight = xlThin\nEnd With\nWith Selection.Borders(xlInsideVertical)\n    .LineStyle = xlContinuous\n    .ColorIndex = 0\n    .TintAndShade = 0\n    .Weight = xlThin\nEnd With\nWith Selection.Borders(xlInsideHorizontal)\n    .LineStyle = xlContinuous\n    .ColorIndex = 0\n    .TintAndShade = 0\n    .Weight = xlThin\nEnd With\nEnd Sub"
+			},
+			{
+				"Title": "Create a User-Defined Function",
+				"Description": "Write a custom function in VBA that performs a specific calculation or operation.",
+				"Instruction": "Create a function named 'SumOfSquares' that takes two numbers as arguments and returns the sum of their squares.",
+				"Level": "Beginner",
+				"Status": "Complete",
+				"Code": "' Define a function named SumOfSquares\nFunction SumOfSquares(num1 As Double, num2 As Double) As Double\n' Calculate the sum of the squares of the two numbers\nSumOfSquares = num1 ^ 2 + num2 ^ 2\nEnd Function",
+				"Solution": "' Solution code\n' Define a function named SumOfSquares\nFunction SumOfSquares(num1 As Double, num2 As Double) As Double\n' Calculate the sum of the squares of the two numbers\nSumOfSquares = num1 ^ 2 + num2 ^ 2\nEnd Function"
+			},
+			{
+				"Title": "Use a Loop",
+				"Description": "Use a loop to repeat a block of code a certain number of times or until a condition is met.",
+				"Instruction": "Write a program that loops through the cells in column A and displays their values in a message box.",
+				"Level": "Intermediate",
+				"Status": "Complete",
+				"Code": "' Declare a variable to store the row number\nDim row As Long\n' Initialize the row number to 1\nrow = 1\n' Loop through the cells in column A until an empty cell is encountered\nDo While Cells(row, 1).Value <> \"\"\n' Display the value of the cell in a message box\nMsgBox Cells(row, 1).Value\n' Increment the row number by 1\nrow = row + 1\n' End the loop\nLoop",
+				"Solution": "' Solution code\n' Declare a variable to store the row number\nDim row As Long\n' Initialize the row number to 1\nrow = 1\n' Loop through the cells in column A until an empty cell is encountered\nDo While Cells(row, 1).Value <> \"\"\n' Display the value of the cell in a message box\nMsgBox Cells(row, 1).Value\n' Increment the row number by 1\nrow = row + 1\n' End the loop\nLoop"
+			},
+			{
+				"Title": "Use an Array",
+				"Description": "Use an array to store and manipulate multiple values of the same data type.",
+				"Instruction": "Write a program that creates an array of 10 random numbers between 1 and 100, sorts them in ascending order, and displays them in a message box.",
+				"Level": "Intermediate",
+				"Status": "Complete",
+				"Code": "' Declare an array of 10 elements\nDim arr(1 To 10) As Integer\n' Declare a variable to store the index\nDim i As Integer\n' Loop through the array and assign random numbers between 1 and 100\nFor i = 1 To 10\narr(i) = Int(Rnd * 100) + 1\nNext i\n' Sort the array in ascending order using the bubble sort algorithm\nDim j As Integer\nDim temp As Integer\nFor i = 1 To 9\nFor j = i + 1 To 10\nIf arr(i) > arr(j) Then\n' Swap the elements\ntemp = arr(i)\narr(i) = arr(j)\narr(j) = temp\nEnd If\nNext j\nNext i\n' Declare a variable to store the output string\nDim output As String\noutput = \"\"\n' Loop through the array and concatenate the elements to the output string\nFor i = 1 To 10\noutput = output & arr(i) & \" \"\nNext i\n' Display the output string in a message box\nMsgBox output",
+				"Solution": "' Solution code\n' Declare an array of 10 elements\nDim arr(1 To 10) As Integer\n' Declare a variable to store the index\nDim i As Integer\n' Loop through the array and assign random numbers between 1 and 100\nFor i = 1 To 10\narr(i) = Int(Rnd * 100) + 1\nNext i\n' Sort the array in ascending order using the bubble sort algorithm\nDim j As Integer\nDim temp As Integer\nFor i = 1 To 9\nFor j = i + 1 To 10\nIf arr(i) > arr(j) Then\n' Swap the elements\ntemp = arr(i)\narr(i) = arr(j)\narr(j) = temp\nEnd If\nNext j\nNext i\n' Declare a variable to store the output string\nDim output As String\noutput = \"\"\n' Loop through the array and concatenate the elements to the output string\nFor i = 1 To 10\noutput = output & arr(i) & \" \"\nNext i\n' Display the output string in a message box\nMsgBox output"
+			},
+			{
+				"Title": "Use a UserForm",
+				"Description": "Use a UserForm to create a graphical user interface for your program.",
+				"Instruction": "Create a UserForm that allows the user to enter their name and age, and displays a greeting message based on their input.",
+				"Level": "Advanced",
+				"Status": "Complete",
+				"Code": "' Create a UserForm named UserForm1\n' Add two labels, two text boxes, and a command button to the UserForm\n' Set the properties of the controls as follows:\n' Label1: Caption = \"Name:\"\n' Label2: Caption = \"Age:\"\n' TextBox1: Name = \"txtName\"\n' TextBox2: Name = \"txtAge\"\n' CommandButton1: Name = \"cmdSubmit\", Caption = \"Submit\"\n\n' Write the code for the click event of the command button\nPrivate Sub cmdSubmit_Click()\n' Declare variables to store the name and age\nDim name As String\nDim age As Integer\n' Get the values from the text boxes\nname = txtName.Text\nage = txtAge.Text\n' Declare a variable to store the greeting message\nDim message As String\nmessage = \"\"\n' Check if the name and age are valid\nIf name = \"\" Then\n' Display an error message if the name is empty\nMsgBox \"Please enter your name.\"\n' Set the focus to the name text box\ntxtName.SetFocus\n' Exit the subroutine\nExit Sub\nEnd If\nIf age <= 0 Or Not IsNumeric(age) Then\n' Display an error message if the age is invalid\nMsgBox \"Please enter a valid age.\"\n' Set the focus to the age text box\ntxtAge.SetFocus\n' Exit the subroutine\nExit Sub\nEnd If\n' Generate the greeting message based on the name and age\nmessage = \"Hello, \" & name & \"! \"\nIf age < 18 Then\nmessage = message & \"You are a minor.\"\nElseIf age >= 18 And age < 65 Then\nmessage = message & \"You are an adult.\"\nElse\nmessage = message & \"You are a senior.\"\nEnd If\n' Display the greeting message in a message box\nMsgBox message\n' Clear the text boxes\ntxtName.Text = \"\"\ntxtAge.Text = \"\"\n' Set the focus to the name text box\ntxtName.SetFocus\nEnd Sub",
+				"Solution": "' Solution code\n' Create a UserForm named UserForm1\n' Add two labels, two text boxes, and a command button to the UserForm\n' Set the properties of the controls as follows:\n' Label1: Caption = \"Name:\"\n' Label2: Caption = \"Age:\"\n' TextBox1: Name = \"txtName\"\n' TextBox2: Name = \"txtAge\"\n' CommandButton1: Name = \"cmdSubmit\", Caption = \"Submit\"\n\n' Write the code for the click event of the command button\nPrivate Sub cmdSubmit_Click()\n' Declare variables to store the name and age\nDim name As String\nDim age As Integer\n' Get the values from the text boxes\nname = txtName.Text\nage = txtAge.Text\n' Declare a variable to store the greeting message\nDim message As String\nmessage = \"\"\n' Check if the name and age are valid\nIf name = \"\" Then\n' Display an error message if the name is empty\nMsgBox \"Please enter your name.\"\n' Set the focus to the name text box\ntxtName.SetFocus\n' Exit the subroutine\nExit Sub\nEnd If\nIf age <= 0 Or Not IsNumeric(age) Then\n' Display an error message if the age is invalid\nMsgBox \"Please enter a valid age.\"\n' Set the focus to the age text box\ntxtAge.SetFocus\n' Exit the subroutine\nExit Sub\nEnd If\n' Generate the greeting message based on the name and age\nmessage = \"Hello, \" & name & \"! \"\nIf age < 18 Then\nmessage = message & \"You are a minor.\"\nElseIf age >= 18 And age < 65 Then\nmessage = message & \"You are an adult.\"\nElse\nmessage = message & \"You are a senior.\"\nEnd If\n' Display the greeting message in a message box\nMsgBox message\n' Clear the text boxes\ntxtName.Text = \"\"\ntxtAge.Text = \"\"\n' Set the focus to the name text box\ntxtName.SetFocus\nEnd Sub"
+			}
+		],
+		"Database Design": [
+			{
+				"Title": "Entity-Relationship Diagram",
+				"Description": "Create an entity-relationship diagram for a database.",
+				"Instruction": "Design a database schema and represent it using an entity-relationship diagram.",
+				"Level": "Intermediate",
+				"Status": "Incomplete",
+				"Code": "// Your code here\n",
+				"Solution": "// Solution code\n// Entity-relationship diagram\n\n// Define the entities\nentity Student {\n    id: int\n    name: string\n    email: string\n}\n\nentity Course {\n    id: int\n    name: string\n}\n\nentity Enrollment {\n    id: int\n    student_id: int\n    course_id: int\n}\n\n// Define the relationships\nStudent \"1\" -- \"many\" Enrollment\nCourse \"1\" -- \"many\" Enrollment"
+			},
+			{
+				"Title": "SQL Queries",
+				"Description": "Write SQL queries for database operations.",
+				"Instruction": "Write SQL queries to perform CRUD operations on a sample database.",
+				"Level": "Intermediate",
+				"Status": "Complete",
+				"Code": "// SQL Queries...\n\n// Create a table\nCREATE TABLE Students (\n    id INT PRIMARY KEY,\n    name VARCHAR(255),\n    email VARCHAR(255)\n);\n\n// Insert records\nINSERT INTO Students (id, name, email)\nVALUES (1, 'John Doe', '",
+				"Solution": "// Solution code\n// SQL Queries...\n\n// Create a table\nCREATE TABLE Students (\n    id INT PRIMARY KEY,\n    name VARCHAR(255),\n    email VARCHAR(255)\n);\n\n// Insert records\nINSERT INTO Students (id, name, email)\nVALUES (1, 'John Doe', '"
+			},
+			{
+				"Title": "Normalization Techniques",
+				"Description": "Apply normalization techniques to a database schema.",
+				"Instruction": "Identify and implement normalization steps to improve the efficiency of a given database schema.",
+				"Level": "Intermediate",
+				"Status": "Complete",
+				"Code": "// Normalization techniques\n\n// Define the entities\nentity Student {\n    id: int\n    name: string\n    email: string\n}\n\nentity Course {\n    id: int\n    name: string\n}\n\nentity Enrollment {\n    id: int\n    student_id: int\n    course_id: int\n}\n\n// Define the relationships\nStudent \"1\" -- \"many\" Enrollment\nCourse \"1\" -- \"many\" Enrollment",
+				"Solution": "// Solution code\n// Normalization techniques\n\n// Define the entities\nentity Student {\n    id: int\n    name: string\n    email: string\n}\n\nentity Course {\n    id: int\n    name: string\n}\n\nentity Enrollment {\n    id: int\n    student_id: int\n    course_id: int\n}\n\n// Define the relationships\nStudent \"1\" -- \"many\" Enrollment\nCourse \"1\" -- \"many\" Enrollment"
+			},
+			{
+				"Title": "Indexing Strategies",
+				"Description": "Implement indexing for database performance optimization.",
+				"Instruction": "Identify suitable columns for indexing and implement indexing strategies to enhance query performance.",
+				"Level": "Intermediate",
+				"Status": "Complete",
+				"Code": "// Indexing strategies\n\n// Create an index on the 'name' column of the 'Students' table\nCREATE INDEX Students_Name_Index ON Students (name);\n\n// Create an index on the 'name' column of the 'Courses' table\nCREATE INDEX Courses_Name_Index ON Courses (name);\n\n// Create an index on the 'student_id' column of the 'Enrollments' table\nCREATE INDEX Enrollments_StudentID_Index ON Enrollments (student_id);\n\n// Create an index on the 'course_id' column of the 'Enrollments' table\nCREATE INDEX Enrollments_CourseID_Index ON Enrollments (course_id);",
+				"Solution": "// Solution code\n// Indexing strategies\n\n// Create an index on the 'name' column of the 'Students' table\nCREATE INDEX Students_Name_Index ON Students (name);\n\n// Create an index on the 'name' column of the 'Courses' table\nCREATE INDEX Courses_Name_Index ON Courses (name);\n\n// Create an index on the 'student_id' column of the 'Enrollments' table\nCREATE INDEX Enrollments_StudentID_Index ON Enrollments (student_id);\n\n// Create an index on the 'course_id' column of the 'Enrollments' table\nCREATE INDEX Enrollments_CourseID_Index ON Enrollments (course_id);"
+			},
+			{
+				"Title": "Database Triggers",
+				"Description": "Create database triggers for automated actions.",
+				"Instruction": "Design and implement triggers that automatically execute actions in response to specific database events.",
+				"Level": "Advanced",
+				"Status": "Failed",
+				"Code": "// Database triggers\n\n// Create a trigger to automatically insert a record into the 'Enrollments' table when a new student is added\nCREATE TRIGGERZZZ Students_Insert_Trigger\nAFTER INSERT ON Students\nFOR EACH ROW\nBEGIN\n    INSERT INTO Enrollments (student_id, course_id)\n    VALUES (NEW.id, 1);\nEND;\n\n// Create a trigger to automatically delete all records from the 'Enrollments' table when a student is deleted\nCREATE TRIGGER Students_Delete_Trigger\nAFTER DELETE ON Students\nFOR EACH ROW\nBEGIN\n    DELETE FROM Enrollments\n    WHERE student_id = OLD.id;\nEND;",
+				"Solution": "// Solution code\n// Database triggers\n\n// Create a trigger to automatically insert a record into the 'Enrollments' table when a new student is added\nCREATE TRIGGER Students_Insert_Trigger\nAFTER INSERT ON Students\nFOR EACH ROW\nBEGIN\n    INSERT INTO Enrollments (student_id, course_id)\n    VALUES (NEW.id, 1);\nEND;\n\n// Create a trigger to automatically delete all records from the 'Enrollments' table when a student is deleted\nCREATE TRIGGER Students_Delete_Trigger\nAFTER DELETE ON Students\nFOR EACH ROW\nBEGIN\n    DELETE FROM Enrollments\n    WHERE student_id = OLD.id;\nEND;"
+			}
+		],
+		"Software Testing Techniques": [
+			{
+				"Title": "Unit Testing",
+				"Description": "Write unit tests for a simple function.",
+				"Instruction": "Create a test suite and write tests for a basic function.",
+				"Level": "Beginner",
+				"Status": "Complete",
+				"Code": "// Write unit tests...\n\n// Define a function to add two numbers\nfunction add(num1, num2) {\n    return num1 + num2;\n}\n\n// Define a test suite\ndescribe('add', function() {\n    // Define a test case\n    it('should add two numbers', function() {\n        // Define the input\n        const num1 = 2;\n        const num2 = 3;\n\n        // Define the expected output\n        const expected = 5;\n\n        // Call the function\n        const actual = add(num1, num2);\n\n        // Check if the actual output matches the expected output\n        expect(actual).toBe(expected);\n    });\n});",
+				"Solution": "// Solution code\n// Write unit tests...\n\n// Define a function to add two numbers\nfunction add(num1, num2) {\n    return num1 + num2;\n}\n\n// Define a test suite\ndescribe('add', function() {\n    // Define a test case\n    it('should add two numbers', function() {\n        // Define the input\n        const num1 = 2;\n        const num2 = 3;\n\n        // Define the expected output\n        const expected = 5;\n\n        // Call the function\n        const actual = add(num1, num2);\n\n        // Check if the actual output matches the expected output\n        expect(actual).toBe(expected);\n    });\n});"
+			},
+			{
+				"Title": "Integration Testing",
+				"Description": "Perform integration testing for a module.",
+				"Instruction": "Design and execute tests to verify the interaction between multiple modules.",
+				"Level": "Intermediate",
+				"Status": "Complete",
+				"Code": "// Perform integration testing...\n\n// Define a function to add two numbers\nfunction add(num1, num2) {\n    return num1 + num2;\n}\n\n// Define a function to multiply two numbers\nfunction multiply(num1, num2) {\n    return num1 * num2;\n}\n\n// Define a test suite\ndescribe('add', function() {\n    // Define a test case\n    it('should add two numbers', function() {\n        // Define the input\n        const num1 = 2;\n        const num2 = 3;\n\n        // Define the expected output\n        const expected = 5;\n\n        // Call the function\n        const actual = add(num1, num2);\n\n        // Check if the actual output matches the expected output\n        expect(actual).toBe(expected);\n    });\n});\n\ndescribe('multiply', function() {\n    // Define a test case\n    it('should multiply two numbers', function() {\n        // Define the input\n        const num1 = 2;\n        const num2 = 3;\n\n        // Define the expected output\n        const expected = 6;\n\n        // Call the function\n        const actual = multiply(num1, num2);\n\n        // Check if the actual output matches the expected output\n        expect(actual).toBe(expected);\n    });\n});",
+				"Solution": "// Solution code\n// Perform integration testing...\n\n// Define a function to add two numbers\nfunction add(num1, num2) {\n    return num1 + num2;\n}\n\n// Define a function to multiply two numbers\nfunction multiply(num1, num2) {\n    return num1 * num2;\n}\n\n// Define a test suite\ndescribe('add', function() {\n    // Define a test case\n    it('should add two numbers', function() {\n        // Define the input\n        const num1 = 2;\n        const num2 = 3;\n\n        // Define the expected output\n        const expected = 5;\n\n        // Call the function\n        const actual = add(num1, num2);\n\n        // Check if the actual output matches the expected output\n        expect(actual).toBe(expected);\n    });\n});\n\ndescribe('multiply', function() {\n    // Define a test case\n    it('should multiply two numbers', function() {\n        // Define the input\n        const num1 = 2;\n        const num2 = 3;\n\n        // Define the expected output\n        const expected = 6;\n\n        // Call the function\n        const actual = multiply(num1, num2);\n\n        // Check if the actual output matches the expected output\n        expect(actual).toBe(expected);\n    });\n});"
+			},
+			{
+				"Title": "End-to-End Testing",
+				"Description": "Conduct end-to-end testing for a software application.",
+				"Instruction": "Design and execute tests that cover the entire workflow of a software application.",
+				"Level": "Intermediate",
+				"Status": "Complete",
+				"Code": "// End-to-end testing...\n\n// Define a function to add two numbers\nfunction add(num1, num2) {\n    return num1 + num2;\n}\n\n// Define a function to multiply two numbers\nfunction multiply(num1, num2) {\n    return num1 * num2;\n}\n\n// Define a test suite\ndescribe('add', function() {\n    // Define a test case\n    it('should add two numbers', function() {\n        // Define the input\n        const num1 = 2;\n        const num2 = 3;\n\n        // Define the expected output\n        const expected = 5;\n\n        // Call the function\n        const actual = add(num1, num2);\n\n        // Check if the actual output matches the expected output\n        expect(actual).toBe(expected);\n    });\n});\n\ndescribe('multiply', function() {\n    // Define a test case\n    it('should multiply two numbers', function() {\n        // Define the input\n        const num1 = 2;\n        const num2 = 3;\n\n        // Define the expected output\n        const expected = 6;\n\n        // Call the function\n        const actual = multiply(num1, num2);\n\n        // Check if the actual output matches the expected output\n        expect(actual).toBe(expected);\n    });\n});",
+				"Solution": "// Solution code\n// End-to-end testing...\n\n// Define a function to add two numbers\nfunction add(num1, num2) {\n    return num1 + num2;\n}\n\n// Define a function to multiply two numbers\nfunction multiply(num1, num2) {\n    return num1 * num2;\n}\n\n// Define a test suite\ndescribe('add', function() {\n    // Define a test case\n    it('should add two numbers', function() {\n        // Define the input\n        const num1 = 2;\n        const num2 = 3;\n\n        // Define the expected output\n        const expected = 5;\n\n        // Call the function\n        const actual = add(num1, num2);\n\n        // Check if the actual output matches the expected output\n        expect(actual).toBe(expected);\n    });\n});\n\ndescribe('multiply', function() {\n    // Define a test case\n    it('should multiply two numbers', function() {\n        // Define the input\n        const num1 = 2;\n        const num2 = 3;\n\n        // Define the expected output\n        const expected = 6;\n\n        // Call the function\n        const actual = multiply(num1, num2);\n\n        // Check if the actual output matches the expected output\n        expect(actual).toBe(expected);\n    });\n});"
+			},
+			{
+				"Title": "Performance Testing",
+				"Description": "Evaluate the performance of a software system under different conditions.",
+				"Instruction": "Design and execute tests to assess the performance and scalability of a software application.",
+				"Level": "Advanced",
+				"Status": "Complete",
+				"Code": "// Performance testing...\n\n// Define a function to add two numbers\nfunction add(num1, num2) {\n    return num1 + num2;\n}\n\n// Define a function to multiply two numbers\nfunction multiply(num1, num2) {\n    return num1 * num2;\n}\n\n// Define a test suite\ndescribe('add', function() {\n    // Define a test case\n    it('should add two numbers', function() {\n        // Define the input\n        const num1 = 2;\n        const num2 = 3;\n\n        // Define the expected output\n        const expected = 5;\n\n        // Call the function\n        const actual = add(num1, num2);\n\n        // Check if the actual output matches the expected output\n        expect(actual).toBe(expected);\n    });\n});\n\ndescribe('multiply', function() {\n    // Define a test case\n    it('should multiply two numbers', function() {\n        // Define the input\n        const num1 = 2;\n        const num2 = 3;\n\n        // Define the expected output\n        const expected = 6;\n\n        // Call the function\n        const actual = multiply(num1, num2);\n\n        // Check if the actual output matches the expected output\n        expect(actual).toBe(expected);\n    });\n});",
+				"Solution": "// Solution code\n// Performance testing...\n\n// Define a function to add two numbers\nfunction add(num1, num2) {\n    return num1 + num2;\n}\n\n// Define a function to multiply two numbers\nfunction multiply(num1, num2) {\n    return num1 * num2;\n}\n\n// Define a test suite\ndescribe('add', function() {\n    // Define a test case\n    it('should add two numbers', function() {\n        // Define the input\n        const num1 = 2;\n        const num2 = 3;\n\n        // Define the expected output\n        const expected = 5;\n\n        // Call the function\n        const actual = add(num1, num2);\n\n        // Check if the actual output matches the expected output\n        expect(actual).toBe(expected);\n    });\n});\n\ndescribe('multiply', function() {\n    // Define a test case\n    it('should multiply two numbers', function() {\n        // Define the input\n        const num1 = 2;\n        const num2 = 3;\n\n        // Define the expected output\n        const expected = 6;\n\n        // Call the function\n        const actual = multiply(num1, num2);\n\n        // Check if the actual output matches the expected output\n        expect(actual).toBe(expected);\n    });\n});"
+			},
+			{
+				"Title": "Usability Testing",
+				"Description": "Assess the usability of a software interface.",
+				"Instruction": "Design and conduct tests to evaluate the user-friendliness and accessibility of a software application.",
+				"Level": "Advanced",
+				"Status": "Complete",
+				"Code": "// Conduct usability testing...\n\n// Define a function to add two numbers\nfunction add(num1, num2) {\n    return num1 + num2;\n}\n\n// Define a function to multiply two numbers\nfunction multiply(num1, num2) {\n    return num1 * num2;\n}\n\n// Define a test suite\ndescribe('add', function() {\n    // Define a test case\n    it('should add two numbers', function() {\n        // Define the input\n        const num1 = 2;\n        const num2 = 3;\n\n        // Define the expected output\n        const expected = 5;\n\n        // Call the function\n        const actual = add(num1, num2);\n\n        // Check if the actual output matches the expected output\n        expect(actual).toBe(expected);\n    });\n});\n\ndescribe('multiply', function() {\n    // Define a test case\n    it('should multiply two numbers', function() {\n        // Define the input\n        const num1 = 2;\n        const num2 = 3;\n\n        // Define the expected output\n        const expected = 6;\n\n        // Call the function\n        const actual = multiply(num1, num2);\n\n        // Check if the actual output matches the expected output\n        expect(actual).toBe(expected);\n    });\n});",
+				"Solution": "// Solution code\n// Conduct usability testing...\n\n// Define a function to add two numbers\nfunction add(num1, num2) {\n    return num1 + num2;\n}\n\n// Define a function to multiply two numbers\nfunction multiply(num1, num2) {\n    return num1 * num2;\n}\n\n// Define a test suite\ndescribe('add', function() {\n    // Define a test case\n    it('should add two numbers', function() {\n        // Define the input\n        const num1 = 2;\n        const num2 = 3;\n\n        // Define the expected output\n        const expected = 5;\n\n        // Call the function\n        const actual = add(num1, num2);\n\n        // Check if the actual output matches the expected output\n        expect(actual).toBe(expected);\n    });\n});\n\ndescribe('multiply', function() {\n    // Define a test case\n    it('should multiply two numbers', function() {\n        // Define the input\n        const num1 = 2;\n        const num2 = 3;\n\n        // Define the expected output\n        const expected = 6;\n\n        // Call the function\n        const actual = multiply(num1, num2);\n\n        // Check if the actual output matches the expected output\n        expect(actual).toBe(expected);\n    });\n});"
+			}
+		]
+	}
+}

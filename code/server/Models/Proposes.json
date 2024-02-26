@@ -1,0 +1,34 @@
+{
+	"ProposesList": [
+		{
+			"Topic": "Introduction to Scratch Programming",
+			"Title": "Creating a Simple Animation",
+			"Description": "This exercise introduces the basics of animation creation in Scratch Programming. Learn how to make a sprite move and change costumes to create a simple animation.",
+			"Instruction": "Create a Scratch project where a sprite moves and changes costumes to create a simple animation.",
+			"Level": "Intermediate",
+			"Solution": "1. Start a new project.\n2. Delete the cat sprite.\n3. Choose a new sprite from the library.\n4. Go to the 'Events' block category and drag the 'when green flag clicked' block to the scripts area.\n5. Attach a 'forever' block from the 'Control' category to the 'when green flag clicked' block.\n6. Inside the 'forever' block, attach a 'move 10 steps' block from the 'Motion' category.\n7. Attach a 'next costume' block from the 'Looks' category below the 'move 10 steps' block.\n8. Repeat steps 6-7 to create a smooth animation.\n9. Click the green flag to start the script and watch the sprite move and change costumes.",
+			"Status": "Pending",
+			"Notes": ""
+		},
+		{
+			"Topic": "Excel Macros and VBA",
+			"Title": "Automated Data Entry",
+			"Description": "Develop a VBA macro in Excel to automate the process of data entry. The macro should prompt the user for input, validate the data, and enter it into specified cells in the active sheet.",
+			"Instruction": "Write a VBA macro that interacts with the user to input data. Validate the entered data, and then automatically populate specified cells with the validated information. Provide informative messages for successful entries and handle potential errors gracefully.",
+			"Level": "Beginner",
+			"Solution": "' Excel Macro - Automated Data Entry\n\nSub AutomatedDataEntry()\n    ' Declare variables for user input\n    Dim userName As String\n    Dim age As Integer\n    Dim entryDate As Date\n\n    ' Prompt user for input\n    userName = InputBox(\"Enter your name:\")\n    age = InputBox(\"Enter your age:\")\n    entryDate = InputBox(\"Enter the date (MM/DD/YYYY):\", \"Date Entry\")\n\n    ' Validate data\n    If userName <> \"\" And IsNumeric(age) And IsDate(entryDate) Then\n        ' Populate specified cells with validated data\n        Range(\"A1\").Value = \"Name:\"\n        Range(\"B1\").Value = userName\n        Range(\"A2\").Value = \"Age:\"\n        Range(\"B2\").Value = age\n        Range(\"A3\").Value = \"Entry Date:\"\n        Range(\"B3\").Value = entryDate\n\n        ' Display success message\n        MsgBox \"Data entry successful!\", vbInformation\n    Else\n        ' Display error message for invalid data\n        MsgBox \"Invalid data! Please enter valid information.\", vbExclamation\n    End If\nEnd Sub",
+			"Status": "Accepted",
+			"Notes": ""
+		},
+		{
+			"Topic": "Software Testing Techniques",
+			"Title": "Unit Testing with Jest",
+			"Description": "Explore unit testing techniques using the Jest testing framework. Focus on testing individual functions and components to ensure code reliability.",
+			"Instruction": "Create a simple JavaScript function, and then write unit tests for that function using the Jest testing framework. Test various input scenarios and assertions to validate the function's behavior.",
+			"Level": "Beginner",
+			"Solution": "// Sample JavaScript function\nfunction addNumbers(a, b) {\n  return a + b;\n}\n\n// Jest Unit Tests\nit('should add two numbers correctly', () => {\n  expect(addNumbers(2, 3)).toBe(5);\n});\nit('should handle negative numbers', () => {\n  expect(addNumbers(-2, 5)).toBe(3);\n});",
+			"Status": "Rejected",
+			"Notes": "The proposed exercise is too basic and does not fully utilize the capabilities of the Jest testing framework. A more complex exercise that involves testing asynchronous code, mocking functions, or testing React components would provide a more comprehensive introduction to Jest."
+		}
+	]
+}
