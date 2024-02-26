@@ -301,7 +301,7 @@ function MyExercisesPage() {
 											<CircularButton
 												icon={<IoPencil />}
 												bg={'primary'}
-												action={() => navigate(`/propose-page/${selectedExercise.Topic}/${selectedExercise.Title}/edit`)}
+												action={() => navigate(`/proposals/${selectedExercise.Topic}/${selectedExercise.Title}/edit`)}
 											/>
 											<CircularButton
 												icon={<IoTrash />}
@@ -318,7 +318,7 @@ function MyExercisesPage() {
 					</div>
 					<button
 						className='fixed bottom-5 right-5 p-3 bg-accent font-semibold rounded-full shadow border border-accent duration-150 hover:-translate-y-1 hover:-translate-x-1 hover:border-secondary active:bg-secondary active:text-sidebar'
-						onClick={() => navigate('/propose-page')}
+						onClick={() => navigate('/proposals')}
 					>
 						<IoAdd className='w-4 h-4' />
 					</button>
@@ -345,7 +345,7 @@ function MyExercisesPage() {
 						<h1 className='text-3xl mb-6 font-semibold'>No Proposals Found!</h1>
 						<button
 							className='bg-accent rounded-full py-3 px-10 text-center shadow-lg border border-accent hover:border-secondary active:bg-secondary active:text-sidebar hover:-translate-y-1 duration-150'
-							onClick={() => navigate('/propose-page')}
+							onClick={() => navigate('/proposals')}
 						>
 							Propose a new exercise
 						</button>

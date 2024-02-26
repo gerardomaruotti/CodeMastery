@@ -19,12 +19,12 @@ function ExerciseCard({ topic, exercise }) {
 			exercise.Status === 'Complete'
 				? done
 				: exercise.Status === 'Incomplete'
-					? notDone
-					: exercise.Status === 'In Progress'
-						? inProgress
-						: exercise.Status === 'Failed'
-							? failed
-							: notDone
+				? notDone
+				: exercise.Status === 'In Progress'
+				? inProgress
+				: exercise.Status === 'Failed'
+				? failed
+				: notDone
 		);
 		setLevel(exercise.Level === 'Beginner' ? beginner : exercise.Level === 'Intermediate' ? intermediate : advanced);
 	}, [exercise]);
@@ -60,8 +60,8 @@ function ExerciseCard({ topic, exercise }) {
 				className='p-2 bg-accent font-semibold w-full rounded-full shadow shadow-primary duration-300 active:bg-secondary active:text-sidebar border border-accent hover:border-secondary'
 				onClick={() =>
 					exercise.Status === 'Complete' || exercise.Status === 'Failed'
-						? navigate(`/results-page/${topic}/${exercise.Title}`)
-						: navigate(`/coding-page/${topic}/${exercise.Title}`)
+						? navigate(`/result/${topic}/${exercise.Title}`)
+						: navigate(`/coding/${topic}/${exercise.Title}`)
 				}
 			>
 				Attempt

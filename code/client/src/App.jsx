@@ -40,12 +40,12 @@ function App() {
 							<Route path='*' element={<NotFound />} />
 							<Route path='/' element={<TopicsList />} />
 							<Route path='/topics/:topic' element={<ExercisesList />} />
-							<Route path='/coding-page/:topic/:exercise' element={<CodingPage />} />
-							<Route path='/results-page/:topic/:exercise' element={<ResultsPage />} />
+							<Route path='/coding/:topic/:exercise' element={<CodingPage />} />
+							<Route path='/result/:topic/:exercise' element={<ResultsPage />} />
 							<Route path='/my-exercises' element={<MyExercisesPage />} />
-							<Route path='/propose-page' element={<ProposePage />} />
-							<Route path='/propose-page/:topic/:exercise/edit' element={<ProposePage />} />
-							<Route path='/documentation-page' element={<DocumentationPage />} />
+							<Route path='/proposals' element={<ProposePage />} />
+							<Route path='/proposals/:topic/:exercise/edit' element={<ProposePage />} />
+							<Route path='/help' element={<DocumentationPage />} />
 						</Routes>
 					</UserContext.Provider>
 				</BrowserRouter>

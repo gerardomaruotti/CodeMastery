@@ -65,7 +65,7 @@ function CodingPage() {
 
 					ExercisesAPI.submitExercise(selectedTopic.Title, selectedExercise.Title, code, workingStatusDef === 'Works!' ? 'Complete' : 'Failed').then(
 						() => {
-							navigate(`/results-page/${selectedTopic.Title}/${selectedExercise.Title}`);
+							navigate(`/result/${selectedTopic.Title}/${selectedExercise.Title}`);
 						}
 					);
 				} catch (error) {

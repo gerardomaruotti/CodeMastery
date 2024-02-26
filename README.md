@@ -43,22 +43,22 @@ We utilized a React Context for streamlined management of persistent user authen
 - '/topic/:topic'
   - \<ExercisesList />
   - Used for the Exercises route. It shows the list of the available exercises.
-- '/coding-page/:topic/:exercise'
+- '/coding/:topic/:exercise'
   - \<CodingPage />
   - Used for the Coding route. It allows the user to attempt a programming exercise.
-- '/results-page/:topic/:exercise'
+- '/result/:topic/:exercise'
   - \<ResultsPage />
   - Used for the Result route. It allows the user to check the solution and compare with his/her code.
 - '/my-exercises'
   - \<MyExercisesPage />
   - Used for Proposes route. It allows the user, if has got the privileges, to see his/her proposes.
-- '/propose-page'
+- '/proposals'
   - \<ProposePage />
   - Used for New Propose route. It allows the user to propose a new exercise that will be evaluated.
-- '/propose-page/:topic/:exercise/edit'
+- '/proposals/:topic/:exercise/edit'
   - \<ProposePage />
   - Used for Edit Propose route. It allows the user to edit a proposal made by him/her.
-- '/documentation-page'
+- '/help'
   - \<DocumentationPage />
   - Used for Documentation route. It allows the user to check how the system works and his functionalities.
 

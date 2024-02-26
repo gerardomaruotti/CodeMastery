@@ -66,7 +66,7 @@ function ResultsPage() {
 			if (result.isConfirmed)
 				ExercisesAPI.retryExercise(topic, exercise)
 					.then(() => {
-						navigate(`/coding-page/${topic}/${exercise}`);
+						navigate(`/coding/${topic}/${exercise}`);
 					})
 					.catch((error) => {
 						console.log(error);

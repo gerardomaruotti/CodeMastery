@@ -437,7 +437,7 @@ function ExercisesList() {
 						<button
 							className='bg-accent rounded-full py-3 px-10 text-center shadow-lg border border-accent hover:border-secondary active:bg-secondary active:text-sidebar hover:-translate-y-1 duration-150'
 							onClick={() => {
-								navigate('/propose-page');
+								navigate('/proposals');
 							}}
 						>
 							Propose Exercise
